@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function WorkDetailPage({ params }: { params: { slug: string } }) {
+export default async function WorkDetailPage({ params }: { params: { slug: string } }) {
   const work = getWorkBySlug(params.slug);
   if (!work) notFound();
 
