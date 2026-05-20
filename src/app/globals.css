@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafaf7;
+  color: #0a0a0a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Subtle grain overlay for paper-like depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Display type for headings */
+.font-display {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.02em;
+}
+
+/* Prose styles for MDX case studies */
+.prose-case h2 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.prose-case h3 {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-case p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  color: #1a1a1a;
+}
+
+.prose-case strong {
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.prose-case ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.prose-case ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.prose-case ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #d97706;
+  font-weight: 600;
+}
+
+.prose-case ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose-case ol li {
+  margin-bottom: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Link styling */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+
+.link-underline:hover {
+  background-size: 0% 1px;
+}

@@ -1,0 +1,51 @@
+---
+title: "[Side Project Name]: A Weekend Tool That Taught Me How LLM Evals Actually Work"
+role: "Solo build · Designer, PM, eng"
+company: "Personal project"
+year: "2025"
+team: "Just me + Claude"
+headline_metric: "Open-sourced · 1.2k GitHub stars · used by 3 AI teams I know of"
+tags: ["Evals", "Open source", "Tooling", "Hands-on"]
+featured: true
+order: 3
+---
+
+## Context
+
+I'd been writing PRDs that referenced "LLM evals" for two years without ever having built one end-to-end myself. The gap was starting to bother me — I could specify what I wanted, but I couldn't feel the trade-offs.
+
+One weekend I built [Tool Name]: a lightweight CLI for running pairwise human evals on LLM outputs. ~600 lines of Python.
+
+## Why I built it
+
+The internal eval tool at my company was great for production, terrible for exploration. I wanted something I could point at a folder of JSONL outputs and get a graded comparison in under 5 minutes. Specifically:
+
+1. Pairwise comparison only (no Likert scales — they're noisy at small N)
+2. Local-first (no SaaS, no upload — I wanted to grade sensitive outputs)
+3. Inter-rater agreement built in (because every team I've worked with skipped this and regretted it)
+
+## What I learned that changed how I PM
+
+**Building the eval was 10× more informative than reading about evals.** The first time I saw two annotators disagree on outputs *I thought were obviously different*, I understood why our internal disagreement rates were 30% — and why our model comparisons were noisier than the team thought.
+
+**Pairwise > absolute scoring, by a lot.** Annotators were ~3× faster and agreement was ~2× higher with "A or B" than with 1-5 scales. I have since pushed every team I work with to switch.
+
+**The hardest part of evals is example selection, not grading.** I spent more time writing the sampling logic than the UI. PMs almost never own this and we should.
+
+## Artifacts
+
+- GitHub repo with README
+- A short writeup: "Three things I got wrong about evals before I built one"
+- Adoption: used by [N] teams I know personally; PRs from 4 contributors
+
+## Outcome
+
+This is a portfolio piece, not a product, so I'll be honest about the "metrics":
+
+- It works. I use it.
+- A few people I respect use it.
+- I'm now the PM on my team who actually understands the eval pipeline, which has changed every conversation I have with applied scientists.
+
+## Why this matters for an AI PM portfolio
+
+I think the bar for senior AI PMs is shifting. It's no longer enough to *speak* the language of ML — you need to have *felt* the trade-offs at least once. Side projects are the cheapest way to do that. This one cost me a Saturday and changed how I make decisions five days a week.
