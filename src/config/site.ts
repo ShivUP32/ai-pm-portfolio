@@ -10,7 +10,7 @@ export const siteConfig = {
   // ─── Hero positioning ─────────────────────────────────────
   // Keep this opinionated. Two lines max.
   tagline: "Strategise > Build > Ship > Repeat! 💪",
-  subline: "Currently building Reevo at ADDA EDUCATION. Previously Hood, Saint-Gobain.",
+  subline: "Currently building Reevo at Adda Education. Previously Hood, Infosys, Grant Thornton and PCS.",
 
   // ─── Contact ──────────────────────────────────────────────
   email: "shivamsingh0013@gmail.com",
