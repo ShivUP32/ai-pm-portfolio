@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { Caveat } from "next/font/google";
 import "./globals.css";
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-signature",
+});
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} — ${siteConfig.role}`,
@@ -21,10 +28,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
+      <body className={`h-screen flex flex-col overflow-hidden ${caveat.variable}`}>
         <Nav />
-        <main className="flex-1 relative z-10">{children}</main>
-        <Footer />
+        <div className="flex-1 overflow-y-auto relative z-10 w-full scroll-smooth">
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

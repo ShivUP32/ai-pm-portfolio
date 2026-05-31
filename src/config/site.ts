@@ -3,41 +3,41 @@
 
 export const siteConfig = {
   // ─── Identity ─────────────────────────────────────────────
-  name: "Your Name",
-  role: "Senior Product Manager, AI",
-  location: "Delhi, India",
+  name: "Shivam Singh",
+  role: "AI Product Manager",
+  location: "Gurugram, India",
 
   // ─── Hero positioning ─────────────────────────────────────
   // Keep this opinionated. Two lines max.
-  tagline: "I lead AI PM teams shipping LLM products that earn user trust.",
-  subline: "Currently building [thing] at [company]. Previously [company], [company].",
+  tagline: "Strategise > Build > Ship > Repeat! 💪",
+  subline: "Currently building Reevo at ADDA EDUCATION. Previously Hood, Saint-Gobain.",
 
   // ─── Contact ──────────────────────────────────────────────
-  email: "you@domain.com",
+  email: "shivamsingh0013@gmail.com",
   social: {
-    github: "https://github.com/yourhandle",
-    linkedin: "https://linkedin.com/in/yourhandle",
-    twitter: "https://twitter.com/yourhandle",
+    github: "https://github.com/ShivUP32",
+    linkedin: "https://www.linkedin.com/in/itsshivamsingh/",
+    twitter: "https://twitter.com/yourhandle", // Keep placeholder if none provided
   },
 
   // ─── Now (update monthly) ─────────────────────────────────
   // Big signal for senior PMs. Update it. Date it.
   now: {
     updated: "May 2026",
-    text: "Reading: 'Designing Machine Learning Systems' (Chip Huyen). Building: a small eval harness for agentic workflows. Thinking about: how to measure trust in AI products without surveys.",
+    text: "Building: 0-to-1 AI products at ADDA EDUCATION. Scaling: Multi-agent frameworks for Voice and Chat. Exploring: New ways to solve D1 retention with personalized AI agents.",
   },
 
   // ─── About blurb ──────────────────────────────────────────
-  about: `I'm a senior AI PM focused on the messy middle of LLM product development — evals, trust, latency-vs-quality trade-offs, and the org work of getting research and product to ship together.
+  about: `I'm a senior AI PM focused on growth, retention, and shipping 0-1 products. Over the last few years, I've led product strategy and growth for India's largest anonymous social network and currently head the AI-Product-Growth at ADDA EDUCATION.
 
-Over the last five years I've shipped AI features at [company] and [company], led teams of PMs through 0→1 LLM launches, and learned the hard way that the hardest part of an AI product is rarely the model.`,
+I specialize in building multi-agent frameworks, integrating AI voice/chat bots to solve core user pain points like onboarding drops and D1 churn, and running relentless, data-driven A/B experiments to find product-market fit.`,
 
   // ─── What I'm good at ────────────────────────────────────
   // 4-6 items. Specific, not generic.
   strengths: [
-    "0→1 LLM product launches with real eval frameworks",
-    "Turning around stalled AI products by reframing the unit of work",
-    "Translating between applied scientists and product teams",
-    "Building PM teams that ship AI with judgment, not hype",
+    "0→1 AI product launches (Reevo, Knot.dating)",
+    "Designing Multi-Agent Frameworks for support and tutoring",
+    "Driving PMF benchmarks and 10X revenue growth via relentless A/B testing",
+    "Integrating AI voice (IVR) & WhatsApp agents into core funnels",
   ],
 };

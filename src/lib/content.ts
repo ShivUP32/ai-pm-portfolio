@@ -34,7 +34,12 @@ export function getAllWork(): WorkItem[] {
     return { slug, ...data, content } as WorkItem;
   });
 
-  return items.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+  return items.sort((a, b) => {
+    const yearA = parseInt(a.year || "0", 10);
+    const yearB = parseInt(b.year || "0", 10);
+    if (yearA !== yearB) return yearB - yearA;
+    return (a.order ?? 99) - (b.order ?? 99);
+  });
 }
 
 export function getWorkBySlug(slug: string): WorkItem | null {
