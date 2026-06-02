@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`h-screen flex flex-col overflow-hidden ${caveat.variable}`}>
         <Nav />
-        <div className="flex-1 overflow-y-auto relative z-10 w-full scroll-smooth">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden relative z-10 w-full scroll-smooth">
           <main>{children}</main>
         </div>
       </body>
