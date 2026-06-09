@@ -224,7 +224,7 @@ export default function HomePage() {
                   <h3 className="text-sm font-mono tracking-widest uppercase text-accent-teal mb-6 border-b border-white/10 pb-4">
                     Tech & Analytics
                   </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-4">
+                  <div className="flex flex-wrap gap-3">
                     {[
                       { name: "Claude", file: "Claude-code.svg.png" },
                       { name: "Open AI", file: "openai-new-logo_f252fc.webp", customClass: "object-cover object-center scale-[1.25]" },
@@ -242,11 +242,14 @@ export default function HomePage() {
                       { name: "Meta Suite", file: "meta-suite.svg" },
                       { name: "Google Analytics", file: "Google Analytics.jpg" }
                     ].map(tool => (
-                      <div key={tool.name} className="flex items-center gap-2 text-sm text-ink-muted group cursor-default">
+                      <div 
+                        key={tool.name} 
+                        className="group flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/[0.02] border border-white/5 hover:border-accent-teal/40 hover:bg-accent-teal/5 hover:shadow-[0_0_15px_rgba(20,184,166,0.15)] transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+                      >
                         <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
-                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className={`transition-all duration-300 grayscale opacity-50 group-hover/card:grayscale-0 group-hover/card:opacity-100 ${tool.customClass || "object-contain p-0.5"}`} unoptimized />
+                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className={`transition-all duration-300 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 ${tool.customClass || "object-contain p-0.5"}`} unoptimized />
                         </div>
-                        <span className="group-hover/card:text-white transition-colors">{tool.name}</span>
+                        <span className="text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
                       </div>
                     ))}
                   </div>
@@ -257,7 +260,7 @@ export default function HomePage() {
                   <h3 className="text-sm font-mono tracking-widest uppercase text-accent-blue mb-6 border-b border-white/10 pb-4">
                     Product Tools
                   </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-4">
+                  <div className="flex flex-wrap gap-3">
                     {[
                       { name: "Jira", file: "jira.svg" },
                       { name: "Lovable", file: "lovable-logo-icon.png" },
@@ -267,11 +270,14 @@ export default function HomePage() {
                       { name: "Google Doc", file: "Google_Docs_logo_(2014-2020).svg.png" },
                       { name: "Figma", file: "figma.png" }
                     ].map(tool => (
-                      <div key={tool.name} className="flex items-center gap-2 text-sm text-ink-muted group cursor-default">
+                      <div 
+                        key={tool.name} 
+                        className="group flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/[0.02] border border-white/5 hover:border-accent-blue/40 hover:bg-accent-blue/5 hover:shadow-[0_0_15px_rgba(56,189,248,0.15)] transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+                      >
                         <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
-                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className="object-contain p-0.5 grayscale opacity-50 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-300" unoptimized />
+                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className="object-contain p-0.5 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" unoptimized />
                         </div>
-                        <span className="group-hover/card:text-white transition-colors">{tool.name}</span>
+                        <span className="text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
                       </div>
                     ))}
                   </div>
@@ -282,7 +288,7 @@ export default function HomePage() {
                   <h3 className="text-sm font-mono tracking-widest uppercase text-accent-glow mb-6 border-b border-white/10 pb-4">
                     Core Skills
                   </h3>
-                  <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  <div className="flex flex-wrap gap-3">
                     {[
                       "LLM Evals", "Voice AI", "Persona Design", 
                       "Agent Orchestration", "Multi Agent Workflow", "Agent Memory Design",
@@ -291,11 +297,15 @@ export default function HomePage() {
                       "Market Research", "Data Analytics", "Data & Innovation", "GMV Growth",
                       "User Stories", "Design Thinking"
                     ].map(skill => (
-                      <li key={skill} className="text-sm text-ink-muted flex items-center gap-3 before:content-[''] before:w-1.5 before:h-1.5 before:bg-white/20 before:rounded-full hover:text-white transition-colors">
-                        {skill}
-                      </li>
+                      <div 
+                        key={skill} 
+                        className="group flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.02] border border-white/5 hover:border-accent-glow/40 hover:bg-accent-glow/5 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent-glow/40 group-hover:bg-accent-glow group-hover:scale-125 transition-all duration-300 shrink-0"></span>
+                        <span className="text-xs font-mono tracking-wider uppercase text-ink-muted group-hover:text-white transition-colors">{skill}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
               </div>
