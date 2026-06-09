@@ -49,6 +49,12 @@ const products: Product[] = [
     vertical: "Agent Orchestration",
     description: "Reusable architecture powering Support, English Teacher, and Doubt Solver agents.",
     metric: "3X Faster Integration",
+    headline_metric: "3X Faster Integration & ~70% Code Reuse",
+    slug: "multi-agent-framework",
+    coverImage: {
+      src: "/images/framework-hero.png",
+      className: "object-cover object-top scale-100 origin-top group-hover:scale-[1.03]"
+    }
   },
   {
     title: "Knot.dating",

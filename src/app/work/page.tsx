@@ -32,6 +32,12 @@ const getCoverImage = (slug: string) => {
       className: 'object-cover object-[85%_0%] scale-100 origin-[85%_0%] group-hover:scale-[1.03]' 
     };
   }
+  if (slug.includes('framework')) {
+    return { 
+      src: '/images/framework-hero.png', 
+      className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
+    };
+  }
   return null;
 }
 
