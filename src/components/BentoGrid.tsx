@@ -33,7 +33,7 @@ const products: Product[] = [
   {
     title: "Knot.dating",
     vertical: "AI Matchmaking",
-    description: "Conversational AI voice (IVR) & WhatsApp agents solving the cold-start problem of incomplete profiles.",
+    description: "Conversational AI voice (IVR) & WhatsApp agents solving the cold-start profile problem.",
     metric: "₹250K in 30 Days",
   },
   {
