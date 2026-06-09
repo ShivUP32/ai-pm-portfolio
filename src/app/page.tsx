@@ -32,6 +32,24 @@ const getCoverImage = (slug: string) => {
   return null;
 }
 
+function renderMetric(metric: string) {
+  const regex = /(₹?\d+(?:\.\d+)?[Kk]\+?|\d+[Xx])/g;
+  const parts = metric.split(regex);
+  return parts.map((part, index) => {
+    if (regex.test(part)) {
+      return (
+        <span 
+          key={index} 
+          className="inline-block font-semibold text-accent-teal/80 group-hover:text-accent-teal group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.4)] group-hover:scale-[1.02] transition-all duration-500 ease-in-out"
+        >
+          {part}
+        </span>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+}
+
 export default function HomePage() {
   const work = getAllWork().filter((w) => w.featured).slice(0, 3);
 
@@ -381,9 +399,9 @@ export default function HomePage() {
                           ))}
                         </div>
                       </div>
-                      <div>
-                        <p className="text-sm text-white font-mono bg-white/5 p-3 rounded-lg border border-white/5">
-                          {w.headline_metric}
+                      <div className="mt-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5 group-hover:border-accent-teal/20 group-hover:bg-accent-teal/[0.01] transition-all duration-500 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)]">
+                        <p className="text-sm text-white/60 group-hover:text-white/95 transition-colors duration-500 leading-relaxed font-sans">
+                          {renderMetric(w.headline_metric)}
                         </p>
                       </div>
                     </Link>
