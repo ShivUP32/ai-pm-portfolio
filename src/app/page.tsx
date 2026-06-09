@@ -14,19 +14,19 @@ const getCoverImage = (slug: string) => {
   if (slug.includes('reevo')) {
     return { 
       src: '/images/reevo.jpg', 
-      className: 'object-cover object-top scale-100 group-hover:scale-105' 
+      className: 'object-cover object-top scale-100 origin-top group-hover:scale-105' 
     };
   }
   if (slug.includes('knot')) {
     return { 
       src: '/images/knot.png', 
-      className: 'object-cover object-top scale-100 group-hover:scale-105' 
+      className: 'object-cover object-top scale-100 origin-top group-hover:scale-105' 
     };
   }
   if (slug.includes('hood')) {
     return { 
       src: '/images/hood.jpg', 
-      className: 'object-cover object-[85%_25%] scale-115 group-hover:scale-[1.22]' 
+      className: 'object-cover object-[85%_0%] scale-115 origin-[85%_0%] group-hover:scale-[1.22]' 
     };
   }
   return null;
