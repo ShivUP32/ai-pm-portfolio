@@ -157,3 +157,54 @@ body::before {
   margin-top: -1.5rem;
   margin-bottom: 2.5rem;
 }
+
+/* Premium Table styles for MDX case studies */
+.prose-case table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.prose-case th {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.90);
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.prose-case td {
+  padding: 1rem 1.25rem;
+  color: rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.prose-case tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-case tr:hover td {
+  background: rgba(255, 255, 255, 0.015);
+  color: #ffffff;
+}
+
+.prose-case th[align="center"],
+.prose-case td[align="center"] {
+  text-align: center;
+}
+
+.prose-case th[align="right"],
+.prose-case td[align="right"] {
+  text-align: right;
+}
