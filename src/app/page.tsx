@@ -11,7 +11,7 @@ import ExperienceItem from "@/components/ExperienceItem";
 import Footer from "@/components/Footer";
 
 const getCoverImage = (slug: string) => {
-  if (slug.includes('reevo')) return '/images/reevo.png';
+  if (slug.includes('reevo')) return '/images/reevo.jpg';
   if (slug.includes('knot')) return '/images/knot.png';
   if (slug.includes('hood')) return '/images/hood.png';
   return null;
