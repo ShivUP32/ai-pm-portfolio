@@ -25,7 +25,7 @@ const getCoverImage = (slug: string) => {
   }
   if (slug.includes('hood')) {
     return { 
-      src: '/images/hood.png', 
+      src: '/images/hood.jpg', 
       className: 'object-cover object-[85%_25%] scale-115 group-hover:scale-[1.22]' 
     };
   }
