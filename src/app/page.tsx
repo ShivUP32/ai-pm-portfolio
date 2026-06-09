@@ -11,9 +11,24 @@ import ExperienceItem from "@/components/ExperienceItem";
 import Footer from "@/components/Footer";
 
 const getCoverImage = (slug: string) => {
-  if (slug.includes('reevo')) return '/images/reevo.jpg';
-  if (slug.includes('knot')) return '/images/knot.png';
-  if (slug.includes('hood')) return '/images/hood.png';
+  if (slug.includes('reevo')) {
+    return { 
+      src: '/images/reevo.jpg', 
+      className: 'object-cover object-top scale-100 group-hover:scale-105' 
+    };
+  }
+  if (slug.includes('knot')) {
+    return { 
+      src: '/images/knot.png', 
+      className: 'object-cover object-[center_60%] scale-115 group-hover:scale-[1.22]' 
+    };
+  }
+  if (slug.includes('hood')) {
+    return { 
+      src: '/images/hood.png', 
+      className: 'object-cover object-[85%_25%] scale-115 group-hover:scale-[1.22]' 
+    };
+  }
   return null;
 }
 
@@ -340,10 +355,10 @@ export default function HomePage() {
                         {coverImage && (
                           <div className="w-full h-40 relative rounded-2xl overflow-hidden mb-6 border border-white/5">
                             <Image 
-                              src={coverImage} 
+                              src={coverImage.src} 
                               alt={w.title} 
                               fill 
-                              className="object-cover object-top grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" 
+                              className={`${coverImage.className} grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out`} 
                             />
                           </div>
                         )}
