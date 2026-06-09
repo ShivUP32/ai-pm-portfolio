@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Github, FileText, Linkedin } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { getAllWork } from "@/lib/content";
 import { experienceData } from "@/lib/experience";
 import VoiceWave from "@/components/VoiceWave";
 import BentoGrid from "@/components/BentoGrid";
@@ -10,48 +9,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ExperienceItem from "@/components/ExperienceItem";
 import Footer from "@/components/Footer";
 
-const getCoverImage = (slug: string) => {
-  if (slug.includes('reevo')) {
-    return { 
-      src: '/images/reevo.jpg', 
-      className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
-    };
-  }
-  if (slug.includes('knot')) {
-    return { 
-      src: '/images/knot.png', 
-      className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
-    };
-  }
-  if (slug.includes('hood')) {
-    return { 
-      src: '/images/hood.jpg', 
-      className: 'object-cover object-[85%_0%] scale-100 origin-[85%_0%] group-hover:scale-[1.03]' 
-    };
-  }
-  return null;
-}
-
-function renderMetric(metric: string) {
-  const regex = /(₹?\d+(?:\.\d+)?[Kk]\+?|\d+[Xx])/g;
-  const parts = metric.split(regex);
-  return parts.map((part, index) => {
-    if (regex.test(part)) {
-      return (
-        <span 
-          key={index} 
-          className="inline-block font-semibold text-accent-teal/80 group-hover:text-accent-teal group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.4)] group-hover:scale-[1.02] transition-all duration-500 ease-in-out"
-        >
-          {part}
-        </span>
-      );
-    }
-    return <span key={index}>{part}</span>;
-  });
-}
-
 export default function HomePage() {
-  const work = getAllWork().filter((w) => w.featured).slice(0, 3);
 
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 relative pt-8 md:pt-10 border-x border-transparent xl:border-white/[0.03]">
@@ -230,7 +188,7 @@ export default function HomePage() {
                   0-1 AI Products
                 </h2>
                 <p className="text-ink-muted mt-2 font-mono text-xs uppercase tracking-widest">
-                  Agents, Bots & Co-Pilots across verticals
+                  Agents, bots & co-pilots with deep-dive case studies
                 </p>
               </div>
               <BentoGrid />
@@ -341,72 +299,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* DEEP DIVE CASE STUDIES */}
-          <ScrollReveal delay={0.1}>
-            <section>
-              <div className="flex items-baseline justify-between mb-8">
-                <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-white flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent-teal animate-pulse"></div>
-                  Deep Dive Case Studies
-                </h2>
-                <Link
-                  href="/work"
-                  className="text-sm text-accent-glow hover:text-white flex items-center gap-1 transition-colors"
-                >
-                  All <span className="hidden md:inline">case studies</span> <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                {work.map((w, i) => {
-                  const coverImage = getCoverImage(w.slug);
-                  return (
-                    <Link
-                      key={w.slug}
-                      href={`/work/${w.slug}`}
-                      className="group block p-5 border border-white/10 rounded-3xl bg-paper-glass hover:bg-white/5 hover:border-accent/40 backdrop-blur-md transition-all h-full flex flex-col justify-between overflow-hidden"
-                    >
-                      <div>
-                        {coverImage && (
-                          <div className="w-full h-40 relative rounded-2xl overflow-hidden mb-6 border border-white/5">
-                            <Image 
-                              src={coverImage.src} 
-                              alt={w.title} 
-                              fill 
-                              className={`${coverImage.className} grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out`} 
-                            />
-                          </div>
-                        )}
-                        <div className="flex items-center gap-3 mb-4 text-xs font-mono text-accent-teal uppercase tracking-wider">
-                          <span>0{i + 1}</span>
-                          <span>·</span>
-                          <span>{w.year}</span>
-                        </div>
-                        <h3 className="font-display text-xl font-medium tracking-tight mb-3 text-white group-hover:text-accent-glow transition-colors">
-                          {w.title}
-                        </h3>
-                        <div className="flex flex-wrap gap-2 mt-4 mb-6">
-                          {w.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-[10px] px-2 py-1 bg-white/5 text-ink-muted rounded border border-white/5 font-mono"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="mt-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5 group-hover:border-accent-teal/20 group-hover:bg-accent-teal/[0.01] transition-all duration-500 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)]">
-                        <p className="text-sm text-white/60 group-hover:text-white/95 transition-colors duration-500 leading-relaxed font-sans">
-                          {renderMetric(w.headline_metric)}
-                        </p>
-                      </div>
-                    </Link>
-                  );
-                })}
               </div>
             </section>
           </ScrollReveal>
