@@ -20,7 +20,7 @@ const getCoverImage = (slug: string) => {
   if (slug.includes('knot')) {
     return { 
       src: '/images/knot.png', 
-      className: 'object-cover object-center scale-100 group-hover:scale-105' 
+      className: 'object-cover object-top scale-100 group-hover:scale-105' 
     };
   }
   if (slug.includes('hood')) {
