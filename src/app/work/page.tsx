@@ -14,6 +14,12 @@ const getCoverImage = (slug: string) => {
       className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
     };
   }
+  if (slug.includes('learner')) {
+    return { 
+      src: '/images/learner.png', 
+      className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
+    };
+  }
   if (slug.includes('knot')) {
     return { 
       src: '/images/knot.png', 

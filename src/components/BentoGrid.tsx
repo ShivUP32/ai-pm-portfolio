@@ -37,6 +37,12 @@ const products: Product[] = [
     vertical: "Doubt Agent",
     description: "AI Doubt Solver agent across chat and voice, fundamentally lifting user retention.",
     metric: "55%+ D1 Retention",
+    headline_metric: "30% D1 Retention & 55%+ Feature-Activated D1 Retention",
+    slug: "learner-doubt-solver",
+    coverImage: {
+      src: "/images/learner.png",
+      className: "object-cover object-top scale-100 origin-top group-hover:scale-[1.03]"
+    }
   },
   {
     title: "Multi-Agent Framework",

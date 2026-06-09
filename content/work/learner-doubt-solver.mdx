@@ -1,0 +1,49 @@
+---
+title: "Learner Doubt Solver AI Agent"
+slug: "learner-doubt-solver"
+year: "2025"
+role: "AI Product Manager"
+company: "ADDA EDUCATION"
+team: "AI / Growth / Design"
+headline_metric: "30% D1 Retention & 55%+ Feature-Activated D1 Retention"
+featured: true
+tags: ["Doubt Agent", "Voice AI", "Retention", "Multi-Agent"]
+---
+
+## The Challenge
+Learner had a D1 retention problem. Students were dropping off before they even got started — not because the content was bad, but because doubts went unanswered.
+   
+D1 retention was sitting at ~20% — a critical early signal of churn. Students hit friction the moment they had a doubt, and there was no instant resolution mechanism. Our student support was async, human-dependent, and could not scale. The core product insight was clear: **Unresolved doubts = broken learning loop = user exits.**
+
+![Learner Doubt Solver Featured Image](/images/learner.png)
+*Meet Riya, the voice-first AI personal study buddy helping students resolve doubts instantly.*
+
+## The Solution
+We designed and shipped a conversational **AI Doubt Solver Agent** across both chat and voice channels to enable real-time, personalized query resolution.
+   
+### Key Design Decisions
+* **Hallucination Control & Guardrails**: Built strict confidence thresholds. If the LLM confidence scored below 85%, the agent gracefully escalated to a human educator instead of guessing, keeping educational content highly accurate.
+* **Persona Design (Meet Riya)**: Styled the agent's tone to be encouraging, conversational, and peer-like ("study dost") using friendly Hinglish to lower the intimidation barrier.
+* **Multi-Turn Memory**: Designed context retention within session boundaries. The agent remembers the previous step in a math or science problem derivation, avoiding repetitive explanations.
+* **Voice vs. Chat Channels**: Shipped voice capabilities for mobile-first users in noisy/low-typing environments, while keeping chat active for quiet study sessions.
+
+## My Role & Product Process
+As the lead PM, I owned the execution lifecycle from scoping to launch:
+- **Problem Identification**: Analyzed user drop-off logs and conducted user interviews, pinpointing "unresolved questions during home study" as the primary churn driver.
+- **Prioritization**: Scoped the agent's initial version, prioritizing high-school level Math and Science where doubt density was highest, and deferring other subjects to a future release.
+- **Velocity (The 15-Day to 5-Day Win)**: Orchestrated team alignment to ship the first version in under 15 days. We then standardized this into a reusable multi-agent framework, cutting integration time for subsequent features to under 5 days.
+
+## Results & Impact
+The Doubt Solver quickly became Learner's single most powerful retention lever.
+
+| Metric | Before | After |
+| :--- | :---: | :---: |
+| **Overall D1 Retention** | ~20% | **30%** |
+| **Feature-Activated D1 Retention** | — | **55%+** |
+| **Agent Integration Velocity** | 15 Days | **&lt;5 Days** |
+
+## The Broader Systemic Impact
+The multi-agent framework we built to power the Doubt Solver was designed for reuse. It was later utilized to launch our **Support Agent** and **English Teacher Agent** with minimal code adjustments, demonstrating robust systems thinking beyond a single feature.
+
+## Intellectual Honesty: What I Learned
+If I were to rebuild this today, I would focus earlier on voice accent adaptation. In early testing, regional accents caused speech-to-text transcription errors for technical terms, leading to false escalations. We resolved this through fine-tuning, but building accent-agnostic speech models from day one would have accelerated initial launch efficacy.
