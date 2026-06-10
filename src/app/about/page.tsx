@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Home, HelpCircle, Laptop } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Footer from "@/components/Footer";
@@ -24,21 +25,32 @@ export default function AboutPage() {
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Home
       </Link>
 
-      <header className="mb-12">
-        <p className="text-sm text-ink-muted uppercase tracking-wider mb-3">About</p>
-        <h1 className="font-display text-5xl md:text-6xl font-medium tracking-tight text-white">
-          {siteConfig.name}
-        </h1>
-      </header>
+      {/* Header Grid containing Profile Info & Image */}
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_200px] gap-8 items-start mb-12">
+        <div>
+          <p className="text-sm text-ink-muted uppercase tracking-wider mb-3">About</p>
+          <h1 className="font-display text-5xl md:text-6xl font-medium tracking-tight text-white mb-6">
+            {siteConfig.name}
+          </h1>
+          <p className="text-xl md:text-2xl text-white font-medium leading-normal tracking-tight">
+            I build AI products where <span className="text-accent-glow">the model is the product</span> — voice and chat agents, multi-agent systems, and the messy infrastructure underneath that nobody wants to talk about: orchestration, memory, tool-calling, guardrails and evals.
+          </p>
+        </div>
+        <div className="relative w-36 h-36 md:w-48 md:h-48 shrink-0 mx-auto md:mx-0">
+          <div className="absolute inset-0 bg-accent-glow rounded-3xl blur-[20px] opacity-20"></div>
+          <Image
+            src="/profile.jpg"
+            alt={siteConfig.name}
+            fill
+            className="rounded-3xl object-cover border border-white/10 shadow-xl"
+            priority
+          />
+        </div>
+      </div>
 
       {/* Structured Premium Layout */}
       <div className="space-y-8 text-lg leading-relaxed text-ink-muted mb-16">
         
-        {/* Pitch / Hook */}
-        <p className="text-xl md:text-2xl text-white font-medium leading-normal tracking-tight">
-          I build AI products where <span className="text-accent-glow">the model is the product</span> — voice and chat agents, multi-agent systems, and the messy infrastructure underneath that nobody wants to talk about: orchestration, memory, tool-calling, guardrails and evals.
-        </p>
-
         {/* Narrative / Context */}
         <p>
           6+ years in, across Consumer, EdTech, and Enterprise. Most recently at Adda Education, where I ran Reevo to 1.5L+ downloads and 6k+ DAU. Shipped an AI Doubt Solver, then turned the underlying multi-agent setup into a framework other product teams here build on. Before Adda, I was at Hood through the Knot.dating pivot, and rebuilt our growth stack in-house after CleverTap got too expensive — cutting that cost by 90%. Going further back, I spent time at Infosys on a large enterprise client where the account grew from $100M to $180M and the program picked up a Gold rating along the way.
