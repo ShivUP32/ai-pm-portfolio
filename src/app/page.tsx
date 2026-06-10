@@ -35,35 +35,21 @@ export default function HomePage() {
               </div>
               
               <h1 className="flex flex-col items-center gap-1 mb-2">
-                <span className="font-signature text-3xl lg:text-4xl font-semibold text-white tracking-tight">Shivam</span>
+                <span className="font-display text-3xl lg:text-4xl font-bold text-white tracking-tight">Shivam</span>
                 <span className="font-mono text-xs tracking-[0.3em] text-white/50">SINGH</span>
               </h1>
               <p className="text-accent-glow font-mono text-xs uppercase tracking-widest mb-4">
                 {siteConfig.role}
               </p>
-              {/* Animated Process Loop Motto */}
-              <div className="flex items-center justify-center gap-1.5 mb-8 text-[13px] group cursor-default whitespace-nowrap">
-                <span className="font-light text-white/50 group-hover:text-white/90 transition-colors duration-500">Strategise</span>
-                
-                <svg className="w-2.5 h-2.5 text-white/20 group-hover:text-[#8b5cf6]/60 transition-colors duration-500 transform group-hover:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                
-                <span className="font-normal text-white/70 group-hover:text-white transition-colors duration-500 delay-75">Build</span>
-                
-                <svg className="w-2.5 h-2.5 text-white/20 group-hover:text-[#8b5cf6]/80 transition-colors duration-500 delay-75 transform group-hover:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                
-                <span className="font-medium text-white/90 group-hover:text-white transition-colors duration-500 delay-150">Ship</span>
-                
-                <svg className="w-3 h-3 text-[#8b5cf6] transform group-hover:rotate-180 transition-transform duration-700 ease-in-out delay-150 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-                
-                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] group-hover:from-[#6366f1] group-hover:to-[#8b5cf6] transition-all duration-500">Repeat!</span>
-                
-                <span className="inline-block hover:scale-125 transition-transform origin-bottom-left cursor-pointer ml-0.5">💪</span>
+              {/* Tagline Motto */}
+              <div className="flex items-center justify-center gap-2 mb-8 text-xs font-mono tracking-wider text-white/40 cursor-default">
+                <span>Strategize</span>
+                <span className="text-white/10">·</span>
+                <span>Build</span>
+                <span className="text-white/10">·</span>
+                <span>Ship</span>
+                <span className="text-white/10">·</span>
+                <span className="text-accent-teal">Scale</span>
               </div>
 
               {/* Action Buttons */}
@@ -82,18 +68,18 @@ export default function HomePage() {
                     href={siteConfig.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-medium hover:bg-white/10 border border-white/5 transition-colors"
+                    className="group flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-medium hover:bg-white/10 border border-white/5 transition-colors"
                   >
-                    <Linkedin className="w-4 h-4 text-accent-teal" />
+                    <Linkedin className="w-4 h-4 text-white/40 group-hover:text-accent-teal transition-colors duration-300" />
                     LinkedIn
                   </Link>
                   <Link
                     href={siteConfig.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-medium hover:bg-white/10 border border-white/5 transition-colors"
+                    className="group flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-medium hover:bg-white/10 border border-white/5 transition-colors"
                   >
-                    <Github className="w-4 h-4 text-accent-blue" />
+                    <Github className="w-4 h-4 text-white/40 group-hover:text-white transition-colors duration-300" />
                     GitHub
                   </Link>
                 </div>
@@ -121,7 +107,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="w-full mt-2 p-4 bg-white/5 rounded-[20px] shadow-[inset_0_2px_10px_rgba(255,255,255,0.02)] border border-white/10">
-                  <div className="flex flex-wrap gap-x-3 gap-y-4 items-center justify-center">
+                  <div className="flex flex-wrap gap-2.5 items-center justify-center">
                     {[
                       { file: "Reevo.png", name: "Reevo" },
                       { file: "Adda-Education.png", name: "ADDA Education" },
@@ -137,7 +123,7 @@ export default function HomePage() {
                     ].map((logo, idx) => (
                       <div 
                         key={idx} 
-                        className="group relative flex items-center justify-center cursor-pointer"
+                        className="group relative flex items-center justify-center cursor-pointer w-12 h-12 rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300"
                       >
                         {/* Tooltip */}
                         <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-[#1a1c20] text-white text-[10px] font-mono tracking-widest uppercase rounded-lg border border-white/10 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none z-50 whitespace-nowrap shadow-2xl">
@@ -147,7 +133,7 @@ export default function HomePage() {
                         <img 
                           src={`/Experience%20Company%20Logo/${encodeURIComponent(logo.file)}`} 
                           alt={logo.name} 
-                          className="h-[30px] w-auto max-w-[90px] object-contain opacity-90 group-hover:opacity-100 group-hover:scale-[1.35] transition-transform duration-300 origin-center"
+                          className="h-6 w-auto max-w-[70%] object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                           draggable={false}
                         />
                       </div>
@@ -332,6 +318,17 @@ export default function HomePage() {
                 Hobby Projects & Open Source
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
+                <Link href="https://chat-wiz-23.lovable.app/" target="_blank" className="p-6 rounded-3xl border border-white/10 bg-paper-glass backdrop-blur-md hover:border-accent-blue/40 transition-colors group block">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-lg font-display font-medium text-white">Nova x Sage</h3>
+                    <LovableIcon className="w-5 h-5 text-ink-muted transition-colors" />
+                  </div>
+                  <p className="text-ink-muted text-sm mb-6 leading-relaxed">Two intents, one chat shell — Support & Doubt journeys.</p>
+                  <span className="text-accent-blue hover:text-white text-xs font-mono flex items-center gap-1 transition-colors">
+                    View on Lovable <ArrowUpRight className="w-3 h-3" />
+                  </span>
+                </Link>
+
                 <Link href="https://github.com/ShivUP32" target="_blank" className="p-6 rounded-3xl border border-white/10 bg-paper-glass backdrop-blur-md hover:border-accent-blue/40 transition-colors group block">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-display font-medium text-white">Aira</h3>
@@ -354,7 +351,7 @@ export default function HomePage() {
                   </span>
                 </Link>
 
-                <Link href="https://github.com/ShivUP32" target="_blank" className="p-6 rounded-3xl border border-white/10 bg-paper-glass backdrop-blur-md hover:border-accent-blue/40 transition-colors group block md:col-span-2 lg:col-span-1">
+                <Link href="https://github.com/ShivUP32" target="_blank" className="p-6 rounded-3xl border border-white/10 bg-paper-glass backdrop-blur-md hover:border-accent-blue/40 transition-colors group block">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-display font-medium text-white">ApplyPilot</h3>
                     <Github className="w-5 h-5 text-ink-muted group-hover:text-white transition-colors" />
@@ -405,5 +402,38 @@ export default function HomePage() {
         </main>
       </div>
     </div>
+  );
+}
+
+function LovableIcon({ className }: { className?: string }) {
+  return (
+    <svg 
+      viewBox="0 0 121 122" 
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="lovable-hover-grad" x1="40.453" x2="76.933" y1="21.433" y2="121.971" gradientUnits="userSpaceOnUse">
+          <stop offset="2.5%" stopColor="#FF8E63" />
+          <stop offset="56%" stopColor="#FF7EB0" />
+          <stop offset="95%" stopColor="#4B73FF" />
+        </linearGradient>
+        <style>{`
+          .lovable-icon-path {
+            fill: currentColor;
+            transition: fill 0.3s ease;
+          }
+          .group:hover .lovable-icon-path {
+            fill: url(#lovable-hover-grad) !important;
+          }
+        `}</style>
+      </defs>
+      <path 
+        className="lovable-icon-path"
+        fillRule="evenodd" 
+        clipRule="evenodd" 
+        d="M36.069 0c19.92 0 36.068 16.155 36.068 36.084v13.713h12.004c19.92 0 36.069 16.156 36.069 36.084 0 19.928-16.149 36.083-36.069 36.083H0v-85.88C0 16.155 16.148 0 36.069 0Z"
+      />
+    </svg>
   );
 }
