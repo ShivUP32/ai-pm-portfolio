@@ -25,18 +25,20 @@ export default function AboutPage() {
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Home
       </Link>
 
-      {/* Header Grid containing Profile Info & Image */}
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_200px] gap-8 items-start mb-12">
-        <div>
-          <p className="text-sm text-ink-muted uppercase tracking-wider mb-3">About</p>
-          <h1 className="font-display text-5xl md:text-6xl font-medium tracking-tight text-white mb-6">
-            {siteConfig.name}
-          </h1>
-          <p className="text-xl md:text-2xl text-white font-medium leading-normal tracking-tight">
-            I build AI products where <span className="text-accent-glow">the model is the product</span> — voice and chat agents, multi-agent systems, and the messy infrastructure underneath that nobody wants to talk about: orchestration, memory, tool-calling, guardrails and evals.
-          </p>
-        </div>
-        <div className="relative w-36 h-36 md:w-48 md:h-48 shrink-0 mx-auto md:mx-0">
+      {/* Header section outside the grid */}
+      <header className="mb-10">
+        <p className="text-sm text-ink-muted uppercase tracking-wider mb-3">About</p>
+        <h1 className="font-display text-5xl md:text-6xl font-medium tracking-tight text-white">
+          {siteConfig.name}
+        </h1>
+      </header>
+
+      {/* Grid containing Intro & Image (Vertically Symmetrical) */}
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_180px] gap-8 md:gap-12 items-center mb-12">
+        <p className="text-xl md:text-2xl text-white font-medium leading-normal tracking-tight">
+          I build AI products where <span className="text-accent-glow">the model is the product</span> — voice and chat agents, multi-agent systems, and the messy infrastructure underneath that nobody wants to talk about: orchestration, memory, tool-calling, guardrails and evals.
+        </p>
+        <div className="relative w-36 h-36 md:w-44 md:h-44 shrink-0 mx-auto md:mx-0">
           <div className="absolute inset-0 bg-accent-glow rounded-3xl blur-[20px] opacity-20"></div>
           <Image
             src="/profile.jpg"
