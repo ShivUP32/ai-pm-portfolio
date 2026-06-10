@@ -11,7 +11,7 @@ const getCoverImage = (slug: string) => {
   if (slug.includes('reevo')) {
     return { 
       src: '/images/reevo.jpg', 
-      className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
+      className: 'object-contain scale-100 group-hover:scale-[1.03]' 
     };
   }
   if (slug.includes('learner')) {
@@ -23,7 +23,7 @@ const getCoverImage = (slug: string) => {
   if (slug.includes('knot')) {
     return { 
       src: '/images/knot.png', 
-      className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
+      className: 'object-contain scale-100 group-hover:scale-[1.03]' 
     };
   }
   if (slug.includes('hood')) {
@@ -35,14 +35,14 @@ const getCoverImage = (slug: string) => {
   if (slug.includes('framework')) {
     return { 
       src: '/images/framework-hero.png', 
-      className: 'object-cover object-top scale-100 origin-top group-hover:scale-[1.03]' 
+      className: 'object-contain scale-100 group-hover:scale-[1.03]' 
     };
   }
   return null;
 }
 
 function renderMetric(metric: string) {
-  const regex = /(₹?\d+(?:\.\d+)?[Kk]\+?|\d+[Xx])/g;
+  const regex = /(₹?\d+(?:\.\d+)?[Kk]\+?|\d+[Xx]|~?\d+(?:\.\d+)?%\+?)/g;
   const parts = metric.split(regex);
   return parts.map((part, index) => {
     if (regex.test(part)) {
@@ -102,7 +102,7 @@ export default function WorkPage() {
               <div className="flex flex-col md:flex-row gap-6 items-stretch">
                 {/* Featured Image Container */}
                 {coverImage && (
-                  <div className="w-full md:w-64 h-44 md:h-auto min-h-[176px] relative rounded-2xl overflow-hidden border border-white/5 shrink-0">
+                  <div className="w-full md:w-64 h-44 md:h-auto min-h-[176px] relative rounded-2xl overflow-hidden border border-white/5 shrink-0 bg-white/[0.01]">
                     <Image
                       src={coverImage.src}
                       alt={w.title}
