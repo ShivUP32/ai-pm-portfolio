@@ -1,8 +1,8 @@
 # Multi-Agent Framework
 
-**Agent Orchestration · Case Study 01**
+**Multi-Agent Platform · Case Study 01**
 
-Reusable architecture powering Support, English Teacher, and Doubt Solver agents.
+Reusable orchestration platform powering Support, English Teacher, and Doubt Solver agents.
 
 **3× Faster Integration**
 
@@ -10,7 +10,9 @@ Reusable architecture powering Support, English Teacher, and Doubt Solver agents
 
 ## Overview
 
-A reusable framework that lets us spin up new conversational agents in two weeks instead of six. Three agents — Support, English Teacher, and Doubt Solver — now share one orchestration layer, one memory system, one tool registry, and one analytics pipeline. Each one keeps its own persona, knowledge, and tool catalog.
+A reusable framework that lets us spin up new conversational agents in two weeks instead of six. Three agents — Support, English Teacher, and Doubt Solver — now share one orchestration layer (a central orchestrator that loads each agent's persona at runtime and routes conversation turns through a shared core), one memory system, one tool registry, and one analytics pipeline. Each agent keeps its own persona, knowledge, and tool catalog.
+
+> **Interview framing:** This is a *centrally-orchestrated multi-agent platform* — one orchestrator dispatches to one active agent per conversation turn. This differs from autonomous multi-agent systems (like LangGraph or AutoGen) where agents route tasks to each other independently.
 
 | | |
 |---|---|
@@ -68,7 +70,7 @@ The split that emerged:
 - Channel adapters — web, app, voice, WhatsApp
 - Safety and guardrails — PII, moderation, audit
 - Analytics and observability — logs, metrics, conversation replay
-- Orchestrator and persona loader
+- **Orchestrator and persona loader** — the central component that loads each agent's persona config at runtime, manages multi-turn conversation state, and dispatches turns through the shared core
 
 **Per-agent persona layer (~30%)**
 - System prompts and behavior rules
@@ -77,6 +79,9 @@ The split that emerged:
 - Persona configuration (tone, style, escalation rules)
 
 The architectural rule we held to: **shared is reusable, per-agent is what makes the agent feel different.** Anything else got pushed down into the core.
+
+**What the orchestrator does (and doesn't do):**
+The orchestrator is the runtime engine — it reads a persona config file, loads the right prompts and tools, and routes each conversation turn through the shared core. It manages agent lifecycle: init, multi-turn state, and teardown. It does *not* autonomously route between agents or spawn sub-agents. One orchestrator, one active agent per session. Cross-agent transitions happen explicitly via the shared user identity layer, not automatic orchestration.
 
 ---
 
@@ -87,7 +92,7 @@ The framework runs as a central service. Each agent is configured declaratively 
 A few design choices worth noting:
 
 - **Tools are registered centrally**, not embedded in agent code. Adding a new tool means writing it once and exposing it to whichever agents need it.
-- **Memory is namespaced per user and per agent**, so the English Teacher doesn't accidentally see a user's support tickets.
+- **Memory is namespaced per user and per agent**, so the English Teacher doesn't accidentally see a user's support tickets. Each agent's memory is isolated by design.
 - **Evaluation harness is shared**. Every agent gets regression tests, quality scoring, and A/B infrastructure for free.
 - **Persona is hot-reloadable**. Product teams iterate on prompts and tool catalogs without touching framework code.
 
@@ -113,7 +118,7 @@ Same engine. Three identities.
 - **3 agents in production** on the unified framework; more queued
 - **Single team** now owns and maintains all three
 - **Fixes ship to all agents at once** — no more triple-patching
-- **Cross-agent handoff** now feels seamless to users (a support conversation can pass context to the doubt solver, for example)
+- **Shared user identity across the platform** enables warm handoffs — when a user transitions from one agent to another, context is passed explicitly, giving a seamless cross-agent experience without breaking memory isolation
 
 ---
 
@@ -123,6 +128,7 @@ Same engine. Three identities.
 - **Evaluation is the framework's superpower.** Once every agent ran through the same eval harness, quality conversations became data-driven instead of opinion-driven.
 - **Get the tool registry right early.** Bad tool descriptions cause the LLM to pick the wrong tool. Treating each tool as a small product — with its own spec, owner, and tests — paid off immediately.
 - **Don't unify what isn't actually duplicated.** We almost unified the knowledge bases across agents. We didn't, and that was the right call — each agent's knowledge is genuinely different, even if the retrieval mechanism is the same.
+- **Know your orchestration pattern.** What we built is a *centrally-managed platform*: one orchestrator, one active agent per turn, deterministic persona loading. This is different from fully autonomous multi-agent systems where agents spawn and route to each other. Being precise about this distinction in interviews — and knowing terms like ReAct, LangGraph, AutoGen, and when each applies — shows PM depth on AI architecture.
 
 ---
 

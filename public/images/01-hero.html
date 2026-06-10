@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1440px; height: 810px; overflow: hidden;
+  background: #F5F2ED;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  display: flex; align-items: stretch;
+}
+.left {
+  width: 640px; padding: 0 80px;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative;
+}
+.right {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.eyebrow {
+  font-size: 11px; letter-spacing: 0.15em; color: #999;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+h1 {
+  font-size: 88px; font-weight: 900; line-height: 0.95;
+  color: #1A1A1A; letter-spacing: -0.03em;
+}
+.rule { width: 40px; height: 3px; background: #1A1A1A; margin: 28px 0; }
+.subtitle {
+  font-size: 18px; color: #4A4A4A; line-height: 1.65;
+}
+.pill {
+  display: inline-block; margin-top: 36px;
+  background: #1A1A1A; color: white;
+  border-radius: 100px; padding: 14px 30px;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+}
+.footer {
+  position: absolute; bottom: 40px; left: 80px;
+  font-size: 10px; letter-spacing: 0.12em; color: #B0B0B0; text-transform: uppercase;
+}
+svg text { font-family: system-ui, -apple-system, sans-serif; }
+</style>
+</head>
+<body>
+<div class="left">
+  <div class="eyebrow">Multi-Agent Platform</div>
+  <h1>Multi-Agent<br>Framework</h1>
+  <div class="rule"></div>
+  <div class="subtitle">Reusable orchestration platform powering Support,<br>English Teacher, and Doubt Solver agents.</div>
+  <div class="pill">3× Faster Integration</div>
+  <div class="footer">Portfolio · Case Study 01</div>
+</div>
+<div class="right">
+  <svg width="580" height="580" viewBox="0 0 580 580" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Dashed connection lines -->
+    <line x1="290" y1="290" x2="290" y2="110" stroke="#C8C4BE" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <line x1="290" y1="290" x2="130" y2="430" stroke="#C8C4BE" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <line x1="290" y1="290" x2="450" y2="430" stroke="#C8C4BE" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <!-- Core circle -->
+    <circle cx="290" cy="290" r="100" fill="#1A1A1A"/>
+    <text x="290" y="280" text-anchor="middle" fill="white" font-size="13" font-weight="700" letter-spacing="0.08em">FRAMEWORK</text>
+    <text x="290" y="300" text-anchor="middle" fill="#888" font-size="11" letter-spacing="0.1em">CORE</text>
+    <!-- Support Agent -->
+    <circle cx="290" cy="90" r="72" fill="#EEEDFE" stroke="#4B4BDB" stroke-width="2.5"/>
+    <text x="290" y="84" text-anchor="middle" fill="#4B4BDB" font-size="14" font-weight="700">Support</text>
+    <text x="290" y="102" text-anchor="middle" fill="#4B4BDB" font-size="14" font-weight="700">Agent</text>
+    <!-- English Teacher -->
+    <circle cx="118" cy="438" r="72" fill="#FAECE7" stroke="#CC3333" stroke-width="2.5"/>
+    <text x="118" y="432" text-anchor="middle" fill="#CC3333" font-size="14" font-weight="700">English</text>
+    <text x="118" y="450" text-anchor="middle" fill="#CC3333" font-size="14" font-weight="700">Teacher</text>
+    <!-- Doubt Solver -->
+    <circle cx="462" cy="438" r="72" fill="#E1F5EE" stroke="#1A8C6E" stroke-width="2.5"/>
+    <text x="462" y="432" text-anchor="middle" fill="#1A8C6E" font-size="14" font-weight="700">Doubt</text>
+    <text x="462" y="450" text-anchor="middle" fill="#1A8C6E" font-size="14" font-weight="700">Solver</text>
+  </svg>
+</div>
+</body>
+</html>

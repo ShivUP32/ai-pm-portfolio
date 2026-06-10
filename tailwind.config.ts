@@ -37,6 +37,7 @@ const config: Config = {
         "fade-in": "fadeIn 0.8s ease-out forwards",
         "float": "float 6s ease-in-out infinite",
         "pulse-slow": "pulseSlow 4s ease-in-out infinite",
+        "scale-up": "scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
       keyframes: {
         fadeUp: {
@@ -54,6 +55,10 @@ const config: Config = {
         pulseSlow: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
+        },
+        scaleUp: {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
         },
       },
     },

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1440px; height: 810px; overflow: hidden;
+  background: #F5F2ED;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  padding: 52px 80px 44px;
+}
+.eyebrow { font-size: 10.5px; letter-spacing: 0.15em; color: #999; text-transform: uppercase; margin-bottom: 8px; }
+h2 { font-size: 44px; font-weight: 900; color: #1A1A1A; letter-spacing: -0.025em; margin-bottom: 6px; }
+.subtitle { font-size: 16px; color: #6B6B6B; margin-bottom: 28px; }
+.cards-row { display: flex; gap: 20px; height: 570px; }
+.agent-card {
+  flex: 1; background: white; border-radius: 12px;
+  border: 1px solid #E8E4E0; padding: 24px;
+  display: flex; flex-direction: column;
+  border-top-width: 3px; border-top-style: solid;
+}
+.agent-card.blue { border-top-color: #4B4BDB; }
+.agent-card.red { border-top-color: #CC3333; }
+.agent-card.teal { border-top-color: #1A8C6E; }
+.icon-circle {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: 10px;
+}
+.icon-circle.blue { background: #EEEDFE; }
+.icon-circle.red { background: #FAECE7; }
+.icon-circle.teal { background: #E1F5EE; }
+.agent-num { font-size: 10px; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 2px; }
+.agent-num.blue { color: #4B4BDB; }
+.agent-num.red { color: #CC3333; }
+.agent-num.teal { color: #1A8C6E; }
+.agent-name { font-size: 22px; font-weight: 800; color: #1A1A1A; margin-bottom: 12px; }
+.hairline { height: 1px; background: #EEEBE7; margin-bottom: 12px; }
+.field-label { font-size: 10px; letter-spacing: 0.12em; color: #AAA; text-transform: uppercase; margin-bottom: 4px; margin-top: 10px; }
+.field-text { font-size: 13px; color: #333; line-height: 1.55; }
+.tool-item { font-size: 13px; color: #555; margin-bottom: 2px; }
+.quote {
+  margin-top: auto; padding-top: 12px;
+  font-size: 12px; color: #AAA; font-style: italic; line-height: 1.5;
+  border-top: 1px solid #EEEBE7;
+}
+</style>
+</head>
+<body>
+<div class="eyebrow">The Three Agents</div>
+<h2>Same engine. Three identities.</h2>
+<div class="subtitle">Each agent loads its own persona, knowledge, and tools at runtime.</div>
+
+<div class="cards-row">
+  <div class="agent-card blue">
+    <div class="icon-circle blue">💬</div>
+    <div class="agent-num blue">01 · Customer Support</div>
+    <div class="agent-name">Support Agent</div>
+    <div class="hairline"></div>
+    <div class="field-label">Purpose</div>
+    <div class="field-text">Resolve customer issues end-to-end, escalate when needed.</div>
+    <div class="field-label">Tools</div>
+    <div class="tool-item">· Ticket lookup &amp; create</div>
+    <div class="tool-item">· Order &amp; refund APIs</div>
+    <div class="tool-item">· Human agent handoff</div>
+    <div class="field-label">Persona</div>
+    <div class="field-text">Calm, empathetic, action-oriented. Acknowledges before solving.</div>
+    <div class="quote">"I can see your order — let me get that refund moving for you."</div>
+  </div>
+
+  <div class="agent-card red">
+    <div class="icon-circle red">📖</div>
+    <div class="agent-num red">02 · Language Learning</div>
+    <div class="agent-name">English Teacher</div>
+    <div class="hairline"></div>
+    <div class="field-label">Purpose</div>
+    <div class="field-text">Conversational English practice with real-time corrections.</div>
+    <div class="field-label">Tools</div>
+    <div class="tool-item">· Grammar &amp; pronunciation check</div>
+    <div class="tool-item">· Lesson plan retrieval</div>
+    <div class="tool-item">· Progress tracking</div>
+    <div class="field-label">Persona</div>
+    <div class="field-text">Patient, encouraging, playful. Corrects without breaking flow.</div>
+    <div class="quote">"Nice try! We say 'I went' not 'I goed'. Try again?"</div>
+  </div>
+
+  <div class="agent-card teal">
+    <div class="icon-circle teal">❓</div>
+    <div class="agent-num teal">03 · Academic Tutor</div>
+    <div class="agent-name">Doubt Solver</div>
+    <div class="hairline"></div>
+    <div class="field-label">Purpose</div>
+    <div class="field-text">Step-by-step problem solving for academic doubts.</div>
+    <div class="field-label">Tools</div>
+    <div class="tool-item">· Subject knowledge base (RAG)</div>
+    <div class="tool-item">· Worked example generator</div>
+    <div class="tool-item">· Practice problem retrieval</div>
+    <div class="field-label">Persona</div>
+    <div class="field-text">Methodical, clear, never hands over the answer too fast.</div>
+    <div class="quote">"Let's break it down. What's the first step you'd try?"</div>
+  </div>
+</div>
+</body>
+</html>

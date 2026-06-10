@@ -4,6 +4,7 @@ import { ArrowLeft, Home, ArrowUpRight } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getAllWork, getWorkBySlug } from "@/lib/content";
+import ImageZoom from "@/components/ImageZoom";
 
 export async function generateStaticParams() {
   return getAllWork().map((w) => ({ slug: w.slug }));
@@ -16,6 +17,24 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: work.title,
     description: work.headline_metric,
   };
+}
+
+function renderMetric(metric: string) {
+  const regex = /(₹?\d+(?:\.\d+)?[Kk]\+?|\d+[Xx]|~?\d+(?:\.\d+)?%\+?)/g;
+  const parts = metric.split(regex);
+  return parts.map((part, index) => {
+    if (regex.test(part)) {
+      return (
+        <span 
+          key={index} 
+          className="font-semibold text-accent-teal drop-shadow-[0_0_8px_rgba(20,184,166,0.3)]"
+        >
+          {part}
+        </span>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
 }
 
 export default async function WorkDetailPage({ params }: { params: { slug: string } }) {
@@ -75,7 +94,9 @@ export default async function WorkDetailPage({ params }: { params: { slug: strin
           <p className="text-xs uppercase tracking-wider text-ink-muted mb-2 font-mono">
             Headline outcome
           </p>
-          <p className="font-mono text-base md:text-lg text-white font-medium">{work.headline_metric}</p>
+          <p className="font-mono text-base md:text-lg text-white font-medium">
+            {renderMetric(work.headline_metric)}
+          </p>
         </div>
       </header>
 
@@ -85,6 +106,8 @@ export default async function WorkDetailPage({ params }: { params: { slug: strin
           options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
         />
       </div>
+
+      <ImageZoom />
 
       {/* Bottom Back Link (Footer of Case Study) */}
       <footer className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">

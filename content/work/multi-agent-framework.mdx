@@ -12,7 +12,9 @@ tags: ["Agent Orchestration", "Platform Engineering", "Multi-Agent", "Developer 
 
 ## Overview
 
-A reusable framework that lets us spin up new conversational agents in two weeks instead of six. Three agents — Support, English Teacher, and Doubt Solver — now share one orchestration layer, one memory system, one tool registry, and one analytics pipeline. Each one keeps its own persona, knowledge, and tool catalog.
+A reusable framework that lets us spin up new conversational agents in one week instead of three. Three agents — Support, English Teacher, and Doubt Solver — now share one orchestration layer (a central orchestrator that loads each agent's persona at runtime and routes conversation turns through a shared core), one memory system, one tool registry, and one analytics pipeline. Each agent keeps its own persona, knowledge, and tool catalog.
+
+> **Interview framing:** This is a *centrally-orchestrated multi-agent platform* — one orchestrator dispatches to one active agent per conversation turn. This differs from autonomous multi-agent systems (like LangGraph or AutoGen) where agents route tasks to each other independently.
 
 | Detail | Value |
 | :--- | :--- |
@@ -36,19 +38,19 @@ Each one started its life as a separate project with a different team, timeline,
 ## The Problem
 
 The duplication was eating the team alive:
-* **Six weeks** to launch every new agent. Most of that was rebuilding the same plumbing: NLU, dialog management, memory, tool integration, and analytics.
+* **Three weeks** to launch every new agent. Most of that was rebuilding the same plumbing: NLU, dialog management, memory, tool integration, and analytics.
 * **N&times; engineering effort** for every fix. A bug in conversation memory had to be patched and verified in three separate places.
 * **Inconsistent UX**. The Support Agent handled agent handoffs differently from the Doubt Solver. The English Teacher remembered user preferences, while the others did not.
 * **Improvements stranded**. A better intent classifier shipped to one agent never reached the other two.
 
-The deeper issue was strategic. If we couldn't ship new agents quickly, we couldn't test new product ideas. Every agent concept was a six-week engineering commitment before we knew if it would resonate.
+The deeper issue was strategic. If we couldn't ship new agents quickly, we couldn't test new product ideas. Every agent concept was a three-week engineering commitment before we knew if it would resonate.
 
 ![From three silos to one framework](/images/framework-shift.png)
 *The shift from maintaining three parallel stacks to a single core framework with swap-in persona configurations.*
 
 ## Goals
 
-1. **Velocity**: Cut new-agent integration time from six weeks to two weeks.
+1. **Velocity**: Cut new-agent integration time from three weeks to one week.
 2. **Efficiency**: Share improvements automatically across all agents.
 3. **Fidelity**: Keep each agent's unique persona, knowledge, and tools intact.
 4. **Ownership**: Make the framework owned by one platform team, with agent personas owned by individual product squads.
@@ -66,7 +68,7 @@ The split that emerged:
 * **Channel Adapters**: Web, app, voice, and WhatsApp integrations.
 * **Safety & Guardrails**: PII filtering, moderation, and audits.
 * **Analytics & Observability**: Logs, metrics, and conversation replay.
-* **Orchestrator**: Core agent lifecycle and persona loader.
+* **Orchestrator & Persona Loader**: The central component that loads each agent's persona config at runtime, manages multi-turn conversation state, and dispatches turns through the shared core.
 
 ### Per-Agent Persona Layer (~30%)
 * **System Prompts**: Prompt templates and behavior rules.
@@ -75,6 +77,9 @@ The split that emerged:
 * **Configuration**: Tone, style, and escalation/human-handoff rules.
 
 The architectural rule we held to: **Shared is reusable; per-agent is what makes the agent feel different.** Anything else got pushed down into the core.
+
+**What the orchestrator does (and doesn't do):**
+The orchestrator is the runtime engine — it reads a persona config file, loads the right prompts and tools, and routes each conversation turn through the shared core. It manages agent lifecycle: init, multi-turn state, and teardown. It does *not* autonomously route between agents or spawn sub-agents. One orchestrator, one active agent per session. Cross-agent transitions happen explicitly via the shared user identity layer, not automatic orchestration.
 
 ![Framework Architecture Layer Split](/images/framework-architecture.png)
 *The layered framework architecture showing the separation of unique persona layers, shared core, and centrally managed infrastructure.*
@@ -85,7 +90,7 @@ The framework runs as a central service. Each agent is configured declaratively�
 
 Key design choices:
 * **Central Tool Registry**: Tools are registered centrally, not embedded in agent code. Adding a new tool means writing it once and exposing it to whichever agents need it.
-* **Namespaced Memory**: Memory is namespaced per user and per agent, so the English Teacher doesn't accidentally see a user's support tickets.
+* **Namespaced Memory**: Memory is namespaced per user and per agent, so the English Teacher doesn't accidentally see a user's support tickets. Each agent's memory is isolated by design.
 * **Shared Evaluation Harness**: Every agent gets regression tests, quality scoring, and A/B testing infrastructure out of the box.
 * **Hot-Reloadable Personas**: Product teams iterate on prompts and tool catalogs without touching framework code or redeploying the core service.
 
@@ -106,7 +111,7 @@ The transition to a unified framework dramatically improved our delivery speed a
 
 | Metric | Siloed Stacks | Unified Framework | Improvement |
 | :--- | :---: | :---: | :---: |
-| **New Agent Integration** | 6 Weeks | **2 Weeks** | **3X Faster** |
+| **New Agent Integration** | 3 Weeks | **1 Week** | **3X Faster** |
 | **Core Code Reuse** | 0% | **~70%** | **Shared Core** |
 | **Agents in Production** | 1 (high maintenance) | **3** | **+2 New Verticals** |
 | **Bug Fixing Process** | Triple-Patching | **Fix Once** | **Unified Core** |
@@ -114,8 +119,8 @@ The transition to a unified framework dramatically improved our delivery speed a
 
 ### Qualitative Wins
 * **Unified Ownership**: A single engineering team now owns and maintains the core orchestrator, freeing product squads to focus purely on user experience and prompt tuning.
-* **Instant Improvements**: Any optimization made to the core conversation engine or NLU automatically upgrades all three agents.
-* **Seamless Context Passing**: Users can be handed off across agents (e.g., a Support conversation can pass relevant user context to the Doubt Solver) without losing history.
+* **Instant Improvements**: Any optimization or bug fix made to the core conversation engine or NLU automatically upgrades all three agents at once.
+* **Warm Handoffs**: Shared user identity across the platform enables warm handoffs — when a user transitions from one agent to another, context is passed explicitly, giving a seamless cross-agent experience without breaking memory isolation.
 
 ![Results that compound](/images/framework-impact.png)
 *Impact metrics and qualitative wins unlocked across the agent lineup after migrating to the unified framework.*
@@ -126,11 +131,12 @@ The transition to a unified framework dramatically improved our delivery speed a
 * **Evaluation is the framework's superpower**. Once every agent ran through the same evaluation harness, quality conversations became data-driven instead of opinion-driven.
 * **Get the tool registry right early**. Poor tool descriptions cause the LLM to select the wrong tools. Treating each tool as a small product—with its own spec, owner, and regression tests—paid off immediately.
 * **Don't unify what isn't actually duplicated**. We almost unified the knowledge bases across agents. We didn't, and that was the right call—each agent's knowledge domain is genuinely different, even if the retrieval mechanism is identical.
+* **Know your orchestration pattern**. What we built is a *centrally-managed platform*: one orchestrator, one active agent per turn, deterministic persona loading. This is different from fully autonomous multi-agent systems where agents spawn and route to each other. Being precise about this distinction in interviews — and knowing terms like ReAct, LangGraph, AutoGen, and when each applies — shows PM depth on AI architecture.
 
 ## My Role
 
 * **Architectural Definition**: Defined the framework architecture and the persona/core boundary split.
-* **Cross-Team Alignment**: Drove alignment on shared interfaces and api specifications across product squads.
+* **Cross-Team Alignment**: Drove alignment on shared interfaces and API specifications across product squads.
 * **Configuration Design**: Designed the declarative persona configuration model with engineering.
 * **Metrics & Evaluation**: Established the core analytics dashboard and the offline evaluation harness.
 * **Migration Plan**: Coordinated and executed the migration and rollout plan for the existing siloed agents.

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1440px; height: 810px; overflow: hidden;
+  background: #F5F2ED;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  padding: 52px 72px 44px;
+}
+.eyebrow { font-size: 10.5px; letter-spacing: 0.15em; color: #999; text-transform: uppercase; margin-bottom: 8px; }
+h2 { font-size: 40px; font-weight: 900; color: #1A1A1A; letter-spacing: -0.02em; margin-bottom: 28px; }
+.two-col { display: flex; gap: 0; height: 580px; position: relative; }
+.divider { width: 1px; background: #D8D4CE; margin: 0 40px; flex-shrink: 0; }
+.col { flex: 1; display: flex; flex-direction: column; }
+.col-label { font-size: 10px; letter-spacing: 0.13em; color: #999; text-transform: uppercase; margin-bottom: 8px; }
+h3 { font-size: 22px; font-weight: 800; color: #1A1A1A; margin-bottom: 4px; }
+.col-subtitle { font-size: 13px; color: #888; margin-bottom: 16px; }
+.stacks { display: flex; gap: 10px; margin-bottom: 14px; }
+.stack { flex: 1; }
+.stack-box {
+  border: 1px solid #D0CCC6; background: white; text-align: center;
+  padding: 7px 4px; font-size: 11.5px; color: #444; border-radius: 4px; margin-bottom: 4px;
+}
+.stack-label { text-align: center; font-size: 12px; font-weight: 700; margin-top: 4px; }
+.pills-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+.pill-red { background: #FAECE7; color: #CC3333; padding: 5px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500; }
+.pill-green { background: #EDF7F4; color: #1A8C6E; padding: 5px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500; }
+.persona-boxes { display: flex; gap: 8px; margin-bottom: 10px; }
+.persona-mini {
+  flex: 1; border-radius: 6px; padding: 8px 10px; border: 1.5px solid;
+  display: flex; flex-direction: column;
+}
+.persona-mini.blue { border-color: #4B4BDB; background: #F0EFFD; }
+.persona-mini.red { border-color: #CC3333; background: #FDF0EF; }
+.persona-mini.teal { border-color: #1A8C6E; background: #EDF7F4; }
+.persona-mini-title { font-size: 13px; font-weight: 700; }
+.persona-mini-title.blue { color: #4B4BDB; }
+.persona-mini-title.red { color: #CC3333; }
+.persona-mini-title.teal { color: #1A8C6E; }
+.persona-mini-sub { font-size: 10px; color: #888; }
+.core-dark {
+  background: #1A1A1A; border-radius: 8px; padding: 14px 16px; margin-bottom: 14px;
+}
+.core-dark-title { font-size: 10px; letter-spacing: 0.12em; color: #666; text-transform: uppercase; margin-bottom: 8px; }
+.core-items { display: flex; gap: 20px; }
+.core-col { flex: 1; }
+.core-item { font-size: 12px; color: #C8C8C8; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="eyebrow">The Shift</div>
+<h2>From three silos to one platform</h2>
+
+<div class="two-col">
+  <div class="col">
+    <div class="col-label">Before</div>
+    <h3>Three parallel stacks</h3>
+    <div class="col-subtitle">Every agent rebuilt the same layers from scratch.</div>
+    <div class="stacks">
+      <div class="stack">
+        <div class="stack-box">Channels</div>
+        <div class="stack-box">NLU</div>
+        <div class="stack-box">Dialog</div>
+        <div class="stack-box">Memory</div>
+        <div class="stack-box">Tools</div>
+        <div class="stack-box">Analytics</div>
+        <div class="stack-label" style="color:#4B4BDB">Support</div>
+      </div>
+      <div class="stack">
+        <div class="stack-box">Channels</div>
+        <div class="stack-box">NLU</div>
+        <div class="stack-box">Dialog</div>
+        <div class="stack-box">Memory</div>
+        <div class="stack-box">Tools</div>
+        <div class="stack-box">Analytics</div>
+        <div class="stack-label" style="color:#CC3333">English Teacher</div>
+      </div>
+      <div class="stack">
+        <div class="stack-box">Channels</div>
+        <div class="stack-box">NLU</div>
+        <div class="stack-box">Dialog</div>
+        <div class="stack-box">Memory</div>
+        <div class="stack-box">Tools</div>
+        <div class="stack-box">Analytics</div>
+        <div class="stack-label" style="color:#1A8C6E">Doubt Solver</div>
+      </div>
+    </div>
+    <div class="pills-row">
+      <span class="pill-red">6 weeks per new agent</span>
+      <span class="pill-red">N× bug fixes</span>
+      <span class="pill-red">Inconsistent UX</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="col">
+    <div class="col-label">After</div>
+    <h3>One platform, three personas</h3>
+    <div class="col-subtitle">Shared core, hot-swappable agent personas.</div>
+    <div class="persona-boxes">
+      <div class="persona-mini blue">
+        <div class="persona-mini-title blue">Support</div>
+        <div class="persona-mini-sub">Persona</div>
+      </div>
+      <div class="persona-mini red">
+        <div class="persona-mini-title red">English Teacher</div>
+        <div class="persona-mini-sub">Persona</div>
+      </div>
+      <div class="persona-mini teal">
+        <div class="persona-mini-title teal">Doubt Solver</div>
+        <div class="persona-mini-sub">Persona</div>
+      </div>
+    </div>
+    <div class="core-dark">
+      <div class="core-dark-title">Shared Framework Core</div>
+      <div class="core-items">
+        <div class="core-col">
+          <div class="core-item">· Conversation Engine</div>
+          <div class="core-item">· Memory &amp; Context</div>
+          <div class="core-item">· Tool Registry</div>
+          <div class="core-item">· Orchestrator</div>
+        </div>
+        <div class="core-col">
+          <div class="core-item">· Channel Adapters</div>
+          <div class="core-item">· Safety &amp; Guardrails</div>
+          <div class="core-item">· Analytics + Evals</div>
+          <div class="core-item">· Auth / IAM</div>
+        </div>
+      </div>
+    </div>
+    <div class="pills-row">
+      <span class="pill-green">2 weeks per new agent</span>
+      <span class="pill-green">Fix once, ship to all</span>
+      <span class="pill-green">Consistent core UX</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

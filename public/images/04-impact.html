@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1440px; height: 810px; overflow: hidden;
+  background: #F5F2ED;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  padding: 64px 80px;
+}
+.eyebrow { font-size: 10.5px; letter-spacing: 0.15em; color: #999; text-transform: uppercase; margin-bottom: 8px; }
+h2 { font-size: 52px; font-weight: 900; color: #1A1A1A; letter-spacing: -0.025em; margin-bottom: 6px; }
+.subtitle { font-size: 16px; color: #6B6B6B; margin-bottom: 40px; }
+.cards-row { display: flex; gap: 16px; margin-bottom: 16px; }
+.card {
+  flex: 1; border-radius: 12px; padding: 28px 24px;
+}
+.card-dark { background: #1A1A1A; }
+.card-light { background: white; border: 1px solid #E0DCDA; }
+.card-label { font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; margin-bottom: 12px; }
+.card-dark .card-label { color: #666; }
+.card-light .card-label { color: #999; }
+.big-num { font-size: 88px; font-weight: 900; line-height: 1; letter-spacing: -0.04em; margin-bottom: 8px; }
+.card-dark .big-num { color: white; }
+.num-blue { color: #4B4BDB; }
+.num-dark { color: #1A1A1A; }
+.num-teal { color: #1A8C6E; }
+.card-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.card-dark .card-title { color: white; }
+.card-light .card-title { color: #1A1A1A; }
+.card-sub { font-size: 12px; }
+.card-dark .card-sub { color: #666; }
+.card-light .card-sub { color: #999; }
+.down-indicator { font-size: 12px; color: #CC3333; margin-bottom: 4px; font-weight: 600; }
+.qual-card {
+  background: white; border: 1px solid #E0DCDA; border-radius: 12px;
+  padding: 20px 28px;
+}
+.qual-label { font-size: 10px; letter-spacing: 0.13em; color: #999; text-transform: uppercase; margin-bottom: 14px; }
+.qual-items { display: flex; gap: 48px; }
+.qual-item { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #1A1A1A; }
+.dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.dot-blue { background: #4B4BDB; }
+.dot-red { background: #CC3333; }
+.dot-teal { background: #1A8C6E; }
+</style>
+</head>
+<body>
+<div class="eyebrow">Impact</div>
+<h2>Results that compound</h2>
+<div class="subtitle">What the framework unlocked across the agent lineup.</div>
+
+<div class="cards-row">
+  <div class="card card-dark">
+    <div class="card-label">Integration Speed</div>
+    <div class="big-num">3×</div>
+    <div class="card-title">Faster integration</div>
+    <div class="card-sub">of every new agent we onboard</div>
+  </div>
+  <div class="card card-light">
+    <div class="card-label">Code Reuse</div>
+    <div class="big-num num-blue">70%</div>
+    <div class="card-title">Shared core</div>
+    <div class="card-sub">across every agent on the framework</div>
+  </div>
+  <div class="card card-light">
+    <div class="card-label">Time to Launch</div>
+    <div class="big-num num-dark">1wk</div>
+    <div class="down-indicator">↓ from 3 wk</div>
+    <div class="card-title">Per new agent</div>
+  </div>
+  <div class="card card-light">
+    <div class="card-label">Agents Live</div>
+    <div class="big-num num-teal">3</div>
+    <div class="card-title">In production</div>
+    <div class="card-sub">More queued for next quarter</div>
+  </div>
+</div>
+
+<div class="qual-card">
+  <div class="qual-label">Qualitative Wins</div>
+  <div class="qual-items">
+    <div class="qual-item"><span class="dot dot-blue"></span>Single team owns all agents</div>
+    <div class="qual-item"><span class="dot dot-red"></span>Fixes ship to all agents at once</div>
+    <div class="qual-item"><span class="dot dot-teal"></span>Cross-agent handoff via shared user identity</div>
+  </div>
+</div>
+</body>
+</html>

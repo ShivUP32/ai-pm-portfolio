@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1440px; height: 810px; overflow: hidden;
+  background: #F5F2ED;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  padding: 48px 72px 36px;
+  display: flex; flex-direction: column;
+}
+.eyebrow { font-size: 10.5px; letter-spacing: 0.15em; color: #999; text-transform: uppercase; margin-bottom: 8px; }
+h2 { font-size: 38px; font-weight: 900; color: #1A1A1A; letter-spacing: -0.02em; margin-bottom: 24px; }
+.section-label { font-size: 10px; letter-spacing: 0.13em; color: #999; text-transform: uppercase; margin-bottom: 10px; }
+.persona-row { display: flex; gap: 16px; margin-bottom: 6px; }
+.persona-box {
+  flex: 1; border-radius: 8px; padding: 14px 16px;
+  border-top-width: 3px; border-top-style: solid;
+}
+.persona-box.blue { border-top-color: #4B4BDB; background: #F0EFFD; }
+.persona-box.red { border-top-color: #CC3333; background: #FDF0EF; }
+.persona-box.teal { border-top-color: #1A8C6E; background: #EDF7F4; }
+.persona-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.persona-title.blue { color: #4B4BDB; }
+.persona-title.red { color: #CC3333; }
+.persona-title.teal { color: #1A8C6E; }
+.persona-bullets { font-size: 12px; color: #555; line-height: 1.55; }
+.arrows-row { display: flex; gap: 16px; margin-bottom: 6px; }
+.arrow-cell { flex: 1; text-align: center; font-size: 16px; }
+.arrow-cell.blue { color: #4B4BDB; }
+.arrow-cell.red { color: #CC3333; }
+.arrow-cell.teal { color: #1A8C6E; }
+.core-box {
+  background: #1A1A1A; border-radius: 10px; padding: 16px 20px;
+  margin-bottom: 6px; flex-shrink: 0;
+}
+.core-tiles-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.core-tile {
+  flex: 1; background: #2A2A2A; border-radius: 6px; padding: 10px 12px;
+}
+.tile-title { font-size: 11px; font-weight: 700; color: #E8E8E8; margin-bottom: 3px; }
+.tile-sub { font-size: 10px; color: #777; line-height: 1.4; }
+.down-arrow { text-align: center; font-size: 16px; color: #999; margin-bottom: 6px; }
+.infra-row { display: flex; gap: 14px; }
+.infra-box {
+  flex: 1; background: white; border: 1px solid #DDD; border-radius: 8px; padding: 12px 14px;
+}
+.infra-title { font-size: 12px; font-weight: 700; color: #1A1A1A; margin-bottom: 3px; }
+.infra-sub { font-size: 11px; color: #888; }
+.footer-note { margin-top: 10px; font-size: 11px; color: #999; font-style: italic; text-align: left; }
+</style>
+</head>
+<body>
+<div class="eyebrow">Framework Architecture</div>
+<h2>One core. Three personas. Built to scale.</h2>
+
+<div class="section-label">Persona Layer · Unique per agent</div>
+<div class="persona-row">
+  <div class="persona-box blue">
+    <div class="persona-title blue">Support Agent</div>
+    <div class="persona-bullets">· Customer issue resolution<br>· Ticketing + CRM tools<br>· Human handoff for escalations</div>
+  </div>
+  <div class="persona-box red">
+    <div class="persona-title red">English Teacher</div>
+    <div class="persona-bullets">· Conversational practice<br>· Grammar + pronunciation feedback<br>· Lesson plan integration</div>
+  </div>
+  <div class="persona-box teal">
+    <div class="persona-title teal">Doubt Solver</div>
+    <div class="persona-bullets">· Step-by-step problem solving<br>· Subject-specific knowledge base<br>· Worked examples + practice</div>
+  </div>
+</div>
+<div class="arrows-row">
+  <div class="arrow-cell blue">↓</div>
+  <div class="arrow-cell red">↓</div>
+  <div class="arrow-cell teal">↓</div>
+</div>
+
+<div class="section-label">Shared Framework Core · Reused by all agents</div>
+<div class="core-box">
+  <div class="core-tiles-row">
+    <div class="core-tile"><div class="tile-title">Conversation Engine</div><div class="tile-sub">NLU · Dialog · Routing</div></div>
+    <div class="core-tile"><div class="tile-title">Memory &amp; Context</div><div class="tile-sub">Session · Long-term · RAG</div></div>
+    <div class="core-tile"><div class="tile-title">Tool Selector &amp; Registry</div><div class="tile-sub">Function calling · ReAct</div></div>
+    <div class="core-tile"><div class="tile-title">Channel Adapters</div><div class="tile-sub">Web · App · Voice · WhatsApp</div></div>
+    <div class="core-tile"><div class="tile-title">Safety &amp; Guardrails</div><div class="tile-sub">PII · Moderation · Audit</div></div>
+    <div class="core-tile"><div class="tile-title">Analytics &amp; Observability</div><div class="tile-sub">Logs · Metrics · Replay</div></div>
+  </div>
+  <div class="core-tiles-row" style="margin-bottom:0">
+    <div class="core-tile" style="flex:1.4"><div class="tile-title">Orchestrator</div><div class="tile-sub">Lifecycle · Routing · Multi-turn state machine</div></div>
+    <div class="core-tile" style="flex:1.4"><div class="tile-title">Persona Loader</div><div class="tile-sub">Loads prompts, tools, KB per agent at runtime</div></div>
+    <div class="core-tile" style="flex:1.2"><div class="tile-title">Evaluation Harness</div><div class="tile-sub">Regression tests · Quality scoring · A/B</div></div>
+  </div>
+</div>
+
+<div class="down-arrow">↓</div>
+
+<div class="section-label">Infrastructure · Managed centrally</div>
+<div class="infra-row">
+  <div class="infra-box"><div class="infra-title">LLM Providers</div><div class="infra-sub">OpenAI · Anthropic · self-hosted</div></div>
+  <div class="infra-box"><div class="infra-title">Vector Store</div><div class="infra-sub">Embeddings for RAG and recall</div></div>
+  <div class="infra-box"><div class="infra-title">Database</div><div class="infra-sub">Sessions, profiles, conversation logs</div></div>
+  <div class="infra-box"><div class="infra-title">Auth / IAM</div><div class="infra-sub">Identity, scopes, step-up authentication</div></div>
+</div>
+<div class="footer-note">~70% of every new agent is reused from the shared core. Only the persona layer is rewritten.</div>
+</body>
+</html>

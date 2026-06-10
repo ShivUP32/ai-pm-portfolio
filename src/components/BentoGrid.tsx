@@ -16,6 +16,7 @@ interface Product {
   coverImage?: {
     src: string;
     className: string;
+    containerClassName?: string;
   };
 }
 
@@ -53,7 +54,8 @@ const products: Product[] = [
     slug: "multi-agent-framework",
     coverImage: {
       src: "/images/framework-hero.png",
-      className: "object-cover object-top scale-100 origin-top group-hover:scale-[1.03]"
+      className: "object-cover object-[80%_50%] scale-100 origin-[80%_50%] group-hover:scale-[1.03]",
+      containerClassName: "h-44"
     }
   },
   {
@@ -83,7 +85,7 @@ const products: Product[] = [
 ];
 
 function renderMetric(metric: string) {
-  const regex = /(₹?\d+(?:\.\d+)?[Kk]\+?|\d+[Xx])/g;
+  const regex = /(₹?\d+(?:\.\d+)?[Kk]\+?|\d+[Xx]|~?\d+(?:\.\d+)?%\+?)/g;
   const parts = metric.split(regex);
   return parts.map((part, index) => {
     if (regex.test(part)) {
@@ -210,7 +212,7 @@ export default function BentoGrid() {
                           </div>
                         )}
                         {product.coverImage && (
-                          <div className="w-full h-36 relative rounded-xl overflow-hidden border border-white/5 shrink-0">
+                          <div className={`w-full relative rounded-xl overflow-hidden border border-white/5 shrink-0 ${product.coverImage.containerClassName || "h-36"}`}>
                             <Image
                               src={product.coverImage.src}
                               alt={product.title}
