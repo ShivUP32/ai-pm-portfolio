@@ -43,6 +43,13 @@ export default function Nav() {
           <Link href="/" className="flex items-baseline gap-1 group shrink-0">
             <span className="font-signature text-3xl font-semibold text-accent-glow group-hover:text-white transition-colors tracking-tight">Shivam</span>
             <span className="font-mono text-xs tracking-[0.2em] text-white/70 group-hover:text-white transition-colors">SINGH</span>
+            
+            {/* Mobile Active Section Indicator */}
+            {pathname && pathname !== "/" && (
+              <span className="md:hidden font-mono text-[9px] tracking-widest text-accent-teal ml-1.5 bg-accent-teal/10 px-1.5 py-0.5 rounded border border-accent-teal/20 uppercase shrink-0 font-bold">
+                / {pathname.split("/")[1]}
+              </span>
+            )}
           </Link>
           
           {/* Desktop Navigation */}
@@ -133,6 +140,13 @@ export default function Nav() {
                 <Link href="/" onClick={() => setIsOpen(false)} className="flex items-baseline gap-1 group shrink-0">
                   <span className="font-signature text-3xl font-semibold text-accent-glow group-hover:text-white transition-colors tracking-tight">Shivam</span>
                   <span className="font-mono text-xs tracking-[0.2em] text-white/70 group-hover:text-white transition-colors">SINGH</span>
+                  
+                  {/* Mobile Active Section Indicator */}
+                  {pathname && pathname !== "/" && (
+                    <span className="font-mono text-[9px] tracking-widest text-accent-teal ml-1.5 bg-accent-teal/10 px-1.5 py-0.5 rounded border border-accent-teal/20 uppercase shrink-0 font-bold">
+                      / {pathname.split("/")[1]}
+                    </span>
+                  )}
                 </Link>
                 <button
                   onClick={() => setIsOpen(false)}
@@ -173,13 +187,17 @@ export default function Nav() {
                       <Link
                         href={l.href}
                         onClick={() => setIsOpen(false)}
-                        className={`relative px-5 py-4 font-mono text-base uppercase tracking-[0.15em] transition-all duration-300 rounded-lg border flex items-center justify-between
+                        className={`relative px-5 py-4 font-mono text-base uppercase tracking-[0.15em] transition-all duration-300 rounded-lg border flex items-center justify-between overflow-hidden
                           ${isActive 
-                            ? "text-accent-teal border-accent-teal/30 bg-accent-teal/5 text-accent-teal" 
+                            ? "text-accent-teal border-accent-teal/30 bg-accent-teal/5 text-accent-teal pl-7" 
                             : "text-ink-muted border-white/5 bg-white/[0.02] hover:text-white hover:border-white/10 hover:bg-white/5"
                           }
                         `}
                       >
+                        {/* Active indicator bar on the left edge */}
+                        {isActive && (
+                          <span className="absolute left-0 top-0 bottom-0 w-1.5 bg-accent-teal"></span>
+                        )}
                         <span>{l.label}</span>
                         {isActive && (
                           <span className="w-1.5 h-1.5 rounded-full bg-accent-teal shadow-[0_0_8px_rgba(20,184,166,0.6)]"></span>

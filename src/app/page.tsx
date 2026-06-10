@@ -209,13 +209,12 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col gap-6">
-                
-                {/* Tech & Analytics */}
+                            {/* Tech & Analytics */}
                 <div className="p-6 border border-white/10 rounded-3xl bg-paper-glass backdrop-blur-md hover:-translate-y-1 hover:border-white/20 transition-all shadow-lg hover:shadow-[0_0_30px_rgba(139,92,246,0.1)] group/card cursor-default">
                   <h3 className="text-sm font-mono tracking-widest uppercase text-accent-teal mb-6 border-b border-white/10 pb-4">
                     Tech & Analytics
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {[
                       { name: "Claude", file: "Claude-code.svg.png", hoverClass: "hover:border-amber-600/40 hover:bg-amber-600/5 hover:shadow-[0_0_15px_rgba(217,119,6,0.15)]" },
                       { name: "Open AI", file: "openai-new-logo_f252fc.webp", customClass: "object-cover object-center scale-[1.25]", hoverClass: "hover:border-emerald-600/40 hover:bg-emerald-600/5 hover:shadow-[0_0_15px_rgba(16,185,129,0.15)]" },
@@ -235,12 +234,12 @@ export default function HomePage() {
                     ].map(tool => (
                       <div 
                         key={tool.name} 
-                        className={`group flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/[0.02] border border-white/5 transition-all duration-300 hover:scale-[1.03] cursor-pointer ${tool.hoverClass}`}
+                        className={`group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-white/[0.02] border border-white/5 transition-all duration-300 hover:scale-[1.03] cursor-pointer ${tool.hoverClass}`}
                       >
-                        <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
                           <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className={`transition-all duration-300 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 ${tool.customClass || "object-contain p-0.5"}`} unoptimized />
                         </div>
-                        <span className="text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
+                        <span className="text-xs sm:text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
                       </div>
                     ))}
                   </div>
@@ -251,7 +250,7 @@ export default function HomePage() {
                   <h3 className="text-sm font-mono tracking-widest uppercase text-accent-blue mb-6 border-b border-white/10 pb-4">
                     Product Tools
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {[
                       { name: "Jira", file: "jira.svg", hoverClass: "hover:border-blue-600/40 hover:bg-blue-600/5 hover:shadow-[0_0_15px_rgba(37,99,235,0.15)]" },
                       { name: "Lovable", file: "lovable-logo-icon.png", hoverClass: "hover:border-pink-500/40 hover:bg-pink-500/5 hover:shadow-[0_0_15px_rgba(236,72,153,0.15)]" },
@@ -263,12 +262,12 @@ export default function HomePage() {
                     ].map(tool => (
                       <div 
                         key={tool.name} 
-                        className={`group flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/[0.02] border border-white/5 transition-all duration-300 hover:scale-[1.03] cursor-pointer ${tool.hoverClass}`}
+                        className={`group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-white/[0.02] border border-white/5 transition-all duration-300 hover:scale-[1.03] cursor-pointer ${tool.hoverClass}`}
                       >
-                        <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
                           <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className="object-contain p-0.5 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" unoptimized />
                         </div>
-                        <span className="text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
+                        <span className="text-xs sm:text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
                       </div>
                     ))}
                   </div>
@@ -279,7 +278,7 @@ export default function HomePage() {
                   <h3 className="text-sm font-mono tracking-widest uppercase text-accent-glow mb-6 border-b border-white/10 pb-4">
                     Core Skills
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {[
                       "LLM Evals", "Voice AI", "Persona Design", 
                       "Agent Orchestration", "Multi Agent Workflow", "Agent Memory Design",
@@ -290,10 +289,10 @@ export default function HomePage() {
                     ].map(skill => (
                       <div 
                         key={skill} 
-                        className="group flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.02] border border-white/5 hover:border-accent-glow/40 hover:bg-accent-glow/5 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+                        className="group flex items-center gap-1.5 sm:gap-2.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/[0.02] border border-white/5 hover:border-accent-glow/40 hover:bg-accent-glow/5 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all duration-300 hover:scale-[1.03] cursor-pointer"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent-glow/40 group-hover:bg-accent-glow group-hover:scale-125 group-hover:shadow-[0_0_8px_rgba(167,139,250,0.8)] transition-all duration-300 shrink-0"></span>
-                        <span className="text-xs font-mono tracking-widest font-medium uppercase text-ink-muted group-hover:text-white transition-colors">{skill}</span>
+                        <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-accent-glow/40 group-hover:bg-accent-glow group-hover:scale-125 group-hover:shadow-[0_0_8px_rgba(167,139,250,0.8)] transition-all duration-300 shrink-0"></span>
+                        <span className="text-[10px] sm:text-xs font-mono tracking-widest font-medium uppercase text-ink-muted group-hover:text-white transition-colors">{skill}</span>
                       </div>
                     ))}
                   </div>
