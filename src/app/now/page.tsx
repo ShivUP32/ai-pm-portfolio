@@ -38,17 +38,7 @@ export default function NowPage() {
         <p>{siteConfig.now.text}</p>
       </div>
 
-      <p className="mt-16 text-sm text-ink-muted">
-        Inspired by{" "}
-        <Link
-          href="https://nownownow.com/about"
-          target="_blank"
-          className="link-underline text-accent-glow hover:text-white transition-colors"
-        >
-          Derek Sivers' /now page movement
-        </Link>
-        . This page is dated on purpose.
-      </p>
+
 
       <Footer />
     </div>
