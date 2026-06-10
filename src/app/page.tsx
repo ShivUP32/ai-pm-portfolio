@@ -346,7 +346,7 @@ export default function HomePage() {
                 <Link href="https://github.com/ShivUP32" target="_blank" className="p-6 rounded-3xl border border-white/10 bg-paper-glass backdrop-blur-md hover:border-accent-blue/40 transition-colors group block">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-display font-medium text-white">Aira</h3>
-                    <Github className="w-5 h-5 text-ink-muted group-hover:text-white transition-colors" />
+                    <Github className="w-5 h-5 text-ink-muted group-hover:text-accent-blue transition-colors duration-300" />
                   </div>
                   <p className="text-ink-muted text-sm mb-6 leading-relaxed">AI Doubt Solver specifically designed for Class 12 students.</p>
                   <span className="text-accent-blue hover:text-white text-xs font-mono flex items-center gap-1 transition-colors">
@@ -357,7 +357,7 @@ export default function HomePage() {
                 <Link href="https://github.com/ShivUP32" target="_blank" className="p-6 rounded-3xl border border-white/10 bg-paper-glass backdrop-blur-md hover:border-accent-blue/40 transition-colors group block">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-display font-medium text-white">Aira Studio</h3>
-                    <Github className="w-5 h-5 text-ink-muted group-hover:text-white transition-colors" />
+                    <Github className="w-5 h-5 text-ink-muted group-hover:text-accent-blue transition-colors duration-300" />
                   </div>
                   <p className="text-ink-muted text-sm mb-6 leading-relaxed">Visual Agent Builder and Orchestration tool.</p>
                   <span className="text-accent-blue hover:text-white text-xs font-mono flex items-center gap-1 transition-colors">
@@ -368,7 +368,7 @@ export default function HomePage() {
                 <Link href="https://github.com/ShivUP32" target="_blank" className="p-6 rounded-3xl border border-white/10 bg-paper-glass backdrop-blur-md hover:border-accent-blue/40 transition-colors group block">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-display font-medium text-white">ApplyPilot</h3>
-                    <Github className="w-5 h-5 text-ink-muted group-hover:text-white transition-colors" />
+                    <Github className="w-5 h-5 text-ink-muted group-hover:text-accent-blue transition-colors duration-300" />
                   </div>
                   <p className="text-ink-muted text-sm mb-6 leading-relaxed">Automated tool to apply for jobs directly using AI matching.</p>
                   <span className="text-accent-blue hover:text-white text-xs font-mono flex items-center gap-1 transition-colors">
