@@ -28,16 +28,28 @@ export const siteConfig = {
   },
 
   // ─── About blurb ──────────────────────────────────────────
-  about: `I'm a senior AI PM focused on growth, retention, and shipping 0-1 products. Over the last few years, I've led product strategy and growth for India's largest anonymous social network and currently head the AI-Product-Growth at ADDA EDUCATION.
+  about: `I build AI products where the model is the product - voice and chat agents, multi-agent systems, and the messy infrastructure underneath that nobody wants to talk about: orchestration, memory, tool-calling, guardrails and evals.
 
-I specialize in building multi-agent frameworks, integrating AI voice/chat bots to solve core user pain points like onboarding drops and D1 churn, and running relentless, data-driven A/B experiments to find product-market fit.`,
+6+ years in, across Consumer, EdTech, and Enterprise. Most recently at Adda Education, where I ran Reevo to 1.5L+ downloads and 6k+ DAU. Shipped an AI Doubt Solver, then turned the underlying multi-agent setup into a framework other product teams here build on. Before Adda, I was at Hood through the Knot.dating pivot, and rebuilt our growth stack in-house after CleverTap got too expensive - cut that cost by 90%. Going further back, I spent time at Infosys on a large enterprise client where the account grew from $100M to $180M and the program picked up a Gold rating along the way.
+
+What actually keeps me up:
+- How do you evaluate an agent in production when there's no ground truth?
+- When should an LLM make the call vs. when do you wrap it in deterministic logic?
+- How do you keep a persona from drifting after 50 turns?
+
+I spend most of my time thinking about evals, guardrails, hallucination control - the unsexy middle layer where AI products actually live or die.
+
+Day-to-day stack: Livekit, Sarvam, ElevenLabs, Claude, Codex, Lovable, and the usual PM kit (SQL, BigQuery, Looker, MoEngage, Figma, Jira).
+
+If you're building something real in voice agents, multi-agent systems, or AI-led growth - LET'S TALK.`,
 
   // ─── What I'm good at ────────────────────────────────────
   // 4-6 items. Specific, not generic.
   strengths: [
-    "0→1 AI product launches (Reevo, Knot.dating)",
-    "Designing Multi-Agent Frameworks for support and tutoring",
-    "Driving PMF benchmarks and 10X revenue growth via relentless A/B testing",
-    "Integrating AI voice (IVR) & WhatsApp agents into core funnels",
+    "0→1 AI product engineering & delivery (Reevo, Knot.dating pivot)",
+    "Designing & deploying reusable Multi-Agent Frameworks",
+    "Core AI middleware: orchestration, memory, tool-calling, guardrails & evals",
+    "Data-driven growth stack optimization (90% CleverTap cost reduction)",
+    "Large-scale program governance (growing enterprise accounts from $100M to $180M)",
   ],
 };
