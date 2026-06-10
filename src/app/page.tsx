@@ -21,93 +21,107 @@ export default function HomePage() {
         {/* LEFT SIDEBAR (Sticky Profile) */}
         <aside className="lg:sticky lg:top-8 self-start flex flex-col gap-6 z-20">
           <ScrollReveal delay={0}>
-            <div className="bg-paper-glass backdrop-blur-xl border border-white/10 p-5 lg:p-6 lg:pb-5 rounded-3xl shadow-2xl flex flex-col items-center text-center">
+            <div className="bg-paper-glass backdrop-blur-xl border border-white/10 p-6 lg:p-8 rounded-3xl shadow-2xl flex flex-col items-center text-center">
               
-              <div className="relative mb-4 w-20 h-20 lg:w-24 lg:h-24 shrink-0 animate-fade-in">
-                <div className="absolute inset-0 bg-accent-glow rounded-full blur-[25px] opacity-40 animate-pulse"></div>
+              <div className="relative mb-5 lg:mb-6 w-24 h-24 lg:w-32 lg:h-32 shrink-0 animate-fade-in">
+                <div className="absolute inset-0 bg-accent-glow rounded-full blur-[30px] opacity-40 animate-pulse"></div>
                 <Image
                   src="/profile.jpg"
                   alt={siteConfig.name}
                   fill
-                  className="rounded-full object-cover border-2 border-white/10 shadow-[0_0_30px_rgba(139,92,246,0.15)] relative z-10"
+                  className="rounded-full object-cover border-2 border-white/10 shadow-[0_0_40px_rgba(139,92,246,0.15)] relative z-10"
                   priority
                 />
               </div>
               
-              <h1 className="flex flex-col items-center gap-0.5 mb-1.5">
-                <span className="font-display text-2xl lg:text-3xl font-bold text-white tracking-tight">Shivam</span>
-                <span className="font-mono text-[10px] tracking-[0.3em] text-white/50">SINGH</span>
+              <h1 className="flex flex-col items-center gap-1 mb-2">
+                <span className="font-signature text-3xl lg:text-4xl font-semibold text-white tracking-tight">Shivam</span>
+                <span className="font-mono text-xs tracking-[0.3em] text-white/50">SINGH</span>
               </h1>
-              <p className="text-accent-glow font-mono text-[10px] uppercase tracking-widest mb-3">
+              <p className="text-accent-glow font-mono text-xs uppercase tracking-widest mb-4">
                 {siteConfig.role}
               </p>
-              {/* Tagline Motto */}
-              <div className="flex items-center justify-center gap-1.5 mb-5 text-[11px] font-mono tracking-wider text-white/40 cursor-default">
-                <span>Strategize</span>
-                <span className="text-white/10">·</span>
-                <span>Build</span>
-                <span className="text-white/10">·</span>
-                <span>Ship</span>
-                <span className="text-white/10">·</span>
-                <span className="text-accent-teal">Scale</span>
+              {/* Animated Process Loop Motto */}
+              <div className="flex items-center justify-center gap-1.5 mb-8 text-[13px] group cursor-default whitespace-nowrap">
+                <span className="font-light text-white/50 group-hover:text-white/90 transition-colors duration-500">Strategise</span>
+                
+                <svg className="w-2.5 h-2.5 text-white/20 group-hover:text-[#8b5cf6]/60 transition-colors duration-500 transform group-hover:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                
+                <span className="font-normal text-white/70 group-hover:text-white transition-colors duration-500 delay-75">Build</span>
+                
+                <svg className="w-2.5 h-2.5 text-white/20 group-hover:text-[#8b5cf6]/80 transition-colors duration-500 delay-75 transform group-hover:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                
+                <span className="font-medium text-white/90 group-hover:text-white transition-colors duration-500 delay-150">Ship</span>
+                
+                <svg className="w-3 h-3 text-[#8b5cf6] transform group-hover:rotate-180 transition-transform duration-700 ease-in-out delay-150 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                
+                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] group-hover:from-[#6366f1] group-hover:to-[#8b5cf6] transition-all duration-500">Repeat!</span>
+                
+                <span className="inline-block hover:scale-125 transition-transform origin-bottom-left cursor-pointer ml-0.5">💪</span>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col w-full gap-2">
+              <div className="flex flex-col w-full gap-3">
                 <Link
                   href="https://drive.google.com/file/d/1dFJWf8xWNqnh-rB43LmsgazQpam0NHyr/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white text-black font-medium hover:bg-white/90 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.15)] w-full text-sm"
+                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-medium hover:bg-white/90 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] w-full"
                 >
                   <FileText className="w-4 h-4" />
                   View CV
                 </Link>
-                <div className="grid grid-cols-2 gap-2 w-full">
+                <div className="grid grid-cols-2 gap-3 w-full">
                   <Link
                     href={siteConfig.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 text-white text-xs font-medium hover:bg-white/10 border border-white/5 transition-colors"
+                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-medium hover:bg-white/10 border border-white/5 transition-colors"
                   >
-                    <Linkedin className="w-3.5 h-3.5 text-white/40 group-hover:text-accent-teal transition-colors duration-300" />
+                    <Linkedin className="w-4 h-4 text-accent-teal" />
                     LinkedIn
                   </Link>
                   <Link
                     href={siteConfig.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 text-white text-xs font-medium hover:bg-white/10 border border-white/5 transition-colors"
+                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-medium hover:bg-white/10 border border-white/5 transition-colors"
                   >
-                    <Github className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors duration-300" />
+                    <Github className="w-4 h-4 text-accent-blue" />
                     GitHub
                   </Link>
                 </div>
               </div>
 
               {/* Experience Logos Section */}
-              <div className="w-full mt-4 pt-4 border-t border-white/10 flex flex-col gap-3.5 items-center">
-                <div className="flex items-center justify-center gap-4 w-full">
+              <div className="w-full mt-6 pt-6 border-t border-white/10 flex flex-col gap-5 items-center">
+                <div className="flex items-center justify-center gap-6 w-full mb-1 mt-1">
                   {/* Left Side */}
-                  <div className="text-xl font-bold text-white tracking-wider whitespace-nowrap">
-                    6+ <span className="text-white/60 text-sm font-medium tracking-[0.1em]">YEARS</span>
+                  <div className="text-2xl font-bold text-white tracking-wider whitespace-nowrap">
+                    6+ <span className="text-white/60 text-lg font-medium tracking-[0.1em]">YEARS</span>
                   </div>
 
                   {/* Vertical Divider */}
-                  <div className="w-[1.5px] h-8 bg-white/10 rounded-full"></div>
+                  <div className="w-[2px] h-10 bg-white/10 rounded-full"></div>
 
                   {/* Right Side */}
-                  <div className="flex flex-col gap-0.5">
-                    <div className="text-[9px] font-mono tracking-[0.2em] text-white/50 uppercase whitespace-nowrap">
+                  <div className="flex flex-col gap-1">
+                    <div className="text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase whitespace-nowrap">
                       AI · PRODUCT
                     </div>
-                    <div className="text-[9px] font-mono tracking-[0.2em] text-white/50 uppercase whitespace-nowrap">
+                    <div className="text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase whitespace-nowrap">
                       TECH · GROWTH
                     </div>
                   </div>
                 </div>
-                <div className="w-full mt-1 p-2.5 bg-white/5 rounded-[16px] shadow-[inset_0_2px_10px_rgba(255,255,255,0.02)] border border-white/10">
-                  <div className="flex flex-wrap gap-1.5 items-center justify-center">
+                <div className="w-full mt-2 p-4 bg-white/5 rounded-[20px] shadow-[inset_0_2px_10px_rgba(255,255,255,0.02)] border border-white/10">
+                  <div className="flex flex-wrap gap-x-3 gap-y-4 items-center justify-center">
                     {[
                       { file: "Reevo.png", name: "Reevo" },
                       { file: "Adda-Education.png", name: "ADDA Education" },
@@ -123,7 +137,7 @@ export default function HomePage() {
                     ].map((logo, idx) => (
                       <div 
                         key={idx} 
-                        className="group relative flex items-center justify-center cursor-pointer w-9 h-9 rounded-lg bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300"
+                        className="group relative flex items-center justify-center cursor-pointer"
                       >
                         {/* Tooltip */}
                         <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-[#1a1c20] text-white text-[10px] font-mono tracking-widest uppercase rounded-lg border border-white/10 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none z-50 whitespace-nowrap shadow-2xl">
@@ -133,7 +147,7 @@ export default function HomePage() {
                         <img 
                           src={`/Experience%20Company%20Logo/${encodeURIComponent(logo.file)}`} 
                           alt={logo.name} 
-                          className="h-5 w-auto max-w-[70%] object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                          className="h-[30px] w-auto max-w-[90px] object-contain opacity-90 group-hover:opacity-100 group-hover:scale-[1.35] transition-transform duration-300 origin-center"
                           draggable={false}
                         />
                       </div>
