@@ -163,14 +163,8 @@ body::before {
 .prose-case table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2.5rem 0;
   font-family: var(--font-sans);
   font-size: 0.9375rem;
-  background: rgba(255, 255, 255, 0.01);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .prose-case th {
@@ -183,6 +177,7 @@ body::before {
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .prose-case td {
@@ -208,5 +203,47 @@ body::before {
 .prose-case th[align="right"],
 .prose-case td[align="right"] {
   text-align: right;
+}
+
+/* Mobile View Responsiveness Audits (< 640px) */
+@media (max-width: 640px) {
+  .prose-case p,
+  .prose-case ul li,
+  .prose-case ol li {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  
+  .prose-case h2 {
+    font-size: 1.5rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .prose-case h3 {
+    font-size: 1.0625rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .prose-case img {
+    margin: 1.5rem auto !important;
+    border-radius: 8px !important;
+  }
+  
+  .prose-case img + em {
+    margin-top: -1rem !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .prose-case table {
+    font-size: 0.8125rem;
+  }
+
+  .prose-case th, 
+  .prose-case td {
+    padding: 0.75rem 1rem;
+  }
 }
 

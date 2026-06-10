@@ -21,7 +21,7 @@ export default function HomePage() {
         {/* LEFT SIDEBAR (Sticky Profile) */}
         <aside className="lg:sticky lg:top-8 self-start flex flex-col gap-6 z-20">
           <ScrollReveal delay={0}>
-            <div className="bg-paper-glass backdrop-blur-xl border border-white/10 p-6 lg:p-8 rounded-3xl shadow-2xl flex flex-col items-center text-center">
+            <div className="bg-paper-glass backdrop-blur-xl border border-white/10 p-5 md:p-6 lg:p-8 rounded-3xl shadow-2xl flex flex-col items-center text-center">
               
               <div className="relative mb-5 lg:mb-6 w-24 h-24 lg:w-32 lg:h-32 shrink-0 animate-fade-in">
                 <div className="absolute inset-0 bg-accent-glow rounded-full blur-[30px] opacity-40 animate-pulse"></div>
@@ -42,7 +42,7 @@ export default function HomePage() {
                 {siteConfig.role}
               </p>
               {/* Animated Process Loop Motto */}
-              <div className="flex items-center justify-center gap-1.5 mb-8 text-[13px] group cursor-default whitespace-nowrap">
+              <div className="flex items-center justify-center gap-1 sm:gap-1.5 mb-8 text-[11px] xs:text-xs sm:text-[13px] group cursor-default whitespace-nowrap">
                 <span className="font-light text-white/50 group-hover:text-white/90 transition-colors duration-500">Strategise</span>
                 
                 <svg className="w-2.5 h-2.5 text-white/20 group-hover:text-[#8b5cf6]/60 transition-colors duration-500 transform group-hover:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -120,8 +120,8 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full mt-2 p-4 bg-white/5 rounded-[20px] shadow-[inset_0_2px_10px_rgba(255,255,255,0.02)] border border-white/10">
-                  <div className="flex flex-wrap gap-x-3 gap-y-4 items-center justify-center">
+                <div className="w-full mt-2 p-3 sm:p-4 bg-white/5 rounded-[20px] shadow-[inset_0_2px_10px_rgba(255,255,255,0.02)] border border-white/10">
+                  <div className="flex flex-wrap gap-x-2 gap-y-3 sm:gap-x-3 sm:gap-y-4 items-center justify-center">
                     {[
                       { file: "Reevo.png", name: "Reevo" },
                       { file: "Adda-Education.png", name: "ADDA Education" },
@@ -147,7 +147,7 @@ export default function HomePage() {
                         <img 
                           src={`/Experience%20Company%20Logo/${encodeURIComponent(logo.file)}`} 
                           alt={logo.name} 
-                          className="h-[30px] w-auto max-w-[90px] object-contain opacity-90 group-hover:opacity-100 group-hover:scale-[1.35] transition-transform duration-300 origin-center"
+                          className="h-[24px] sm:h-[30px] w-auto max-w-[70px] sm:max-w-[90px] object-contain opacity-90 group-hover:opacity-100 group-hover:scale-[1.25] transition-transform duration-300 origin-center"
                           draggable={false}
                         />
                       </div>

@@ -114,7 +114,7 @@ export function GlassCard({ children, className = "" }: { children: React.ReactN
 
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl bg-paper-glass backdrop-blur-xl border border-white/10 p-6 shadow-2xl transition-all duration-500 hover:border-accent/40 h-full ${className}`}
+      className={`group relative overflow-hidden rounded-2xl bg-paper-glass backdrop-blur-xl border border-white/10 p-5 md:p-6 shadow-2xl transition-all duration-500 hover:border-accent/40 h-full ${className}`}
       onMouseMove={handleMouseMove}
     >
       <motion.div
@@ -136,7 +136,7 @@ export function GlassCard({ children, className = "" }: { children: React.ReactN
 
 export default function BentoGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full mb-8">
       {products.map((product, i) => {
         const isClickable = !!product.slug;
         const colSpanClass = i === 0 ? "md:col-span-2" : "md:col-span-1";

@@ -37,6 +37,14 @@ function renderMetric(metric: string) {
   });
 }
 
+const mdxComponents = {
+  table: (props: any) => (
+    <div className="w-full overflow-x-auto my-6 border border-white/10 rounded-xl bg-white/[0.01]">
+      <table className="w-full border-collapse" {...props} />
+    </div>
+  ),
+};
+
 export default async function WorkDetailPage({ params }: { params: { slug: string } }) {
   const work = getWorkBySlug(params.slug);
   if (!work) notFound();
@@ -103,6 +111,7 @@ export default async function WorkDetailPage({ params }: { params: { slug: strin
       <div className="prose-case">
         <MDXRemote
           source={work.content}
+          components={mdxComponents}
           options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
         />
       </div>
