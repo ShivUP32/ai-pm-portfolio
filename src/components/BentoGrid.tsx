@@ -183,7 +183,7 @@ export default function BentoGrid() {
                             src={product.coverImage.src}
                             alt={product.title}
                             fill
-                            className={`${product.coverImage.className} grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out`}
+                            className={`${product.coverImage.className} md:grayscale md:opacity-60 md:group-hover:grayscale-0 md:group-hover:opacity-100 transition-all duration-700 ease-out`}
                           />
                         </div>
                       )}
@@ -217,7 +217,7 @@ export default function BentoGrid() {
                               src={product.coverImage.src}
                               alt={product.title}
                               fill
-                              className={`${product.coverImage.className} grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out`}
+                              className={`${product.coverImage.className} md:grayscale md:opacity-60 md:group-hover:grayscale-0 md:group-hover:opacity-100 transition-all duration-700 ease-out`}
                             />
                           </div>
                         )}

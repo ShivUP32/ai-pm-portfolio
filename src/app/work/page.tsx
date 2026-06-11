@@ -107,7 +107,7 @@ export default function WorkPage() {
                       src={coverImage.src}
                       alt={w.title}
                       fill
-                      className={`${coverImage.className} grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out`}
+                      className={`${coverImage.className} md:grayscale md:opacity-60 md:group-hover:grayscale-0 md:group-hover:opacity-100 transition-all duration-700 ease-out`}
                     />
                   </div>
                 )}

@@ -110,7 +110,7 @@ export default function LogsPage() {
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-auto rounded-2xl border border-white/5 group-hover:border-accent-teal/25 transition-all duration-700 ease-out shadow-[0_4px_25px_rgba(0,0,0,0.5)] grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 scale-100 group-hover:scale-[1.012]"
+                    className="w-full h-auto rounded-2xl border border-white/5 md:group-hover:border-accent-teal/25 transition-all duration-700 ease-out shadow-[0_4px_25px_rgba(0,0,0,0.5)] md:grayscale md:opacity-60 md:group-hover:grayscale-0 md:group-hover:opacity-100 scale-100 md:group-hover:scale-[1.012]"
                   />
                 </div>
               )}

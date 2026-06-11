@@ -237,7 +237,7 @@ export default function HomePage() {
                         className={`group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-white/[0.02] border border-white/5 transition-all duration-300 hover:scale-[1.03] cursor-pointer ${tool.hoverClass}`}
                       >
                         <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
-                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className={`transition-all duration-300 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 ${tool.customClass || "object-contain p-0.5"}`} unoptimized />
+                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className={`transition-all duration-300 md:grayscale md:opacity-70 md:group-hover:grayscale-0 md:group-hover:opacity-100 ${tool.customClass || "object-contain p-0.5"}`} unoptimized />
                         </div>
                         <span className="text-xs sm:text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
                       </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
                         className={`group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-white/[0.02] border border-white/5 transition-all duration-300 hover:scale-[1.03] cursor-pointer ${tool.hoverClass}`}
                       >
                         <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden relative shrink-0">
-                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className="object-contain p-0.5 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" unoptimized />
+                          <Image src={`/images/colored-logos/${tool.file}`} alt={tool.name} fill className="object-contain p-0.5 md:grayscale md:opacity-70 md:group-hover:grayscale-0 md:group-hover:opacity-100 transition-all duration-300" unoptimized />
                         </div>
                         <span className="text-xs sm:text-sm text-ink-muted group-hover:text-white transition-colors">{tool.name}</span>
                       </div>
