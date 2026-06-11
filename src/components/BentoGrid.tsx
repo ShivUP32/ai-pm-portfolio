@@ -30,7 +30,7 @@ const products: Product[] = [
     slug: "reevo-growth",
     coverImage: {
       src: "/images/reevo.jpg",
-      className: "object-cover object-top scale-100 origin-top group-hover:scale-[1.03]"
+      className: "object-cover object-top md:object-right-top scale-100 origin-top md:origin-right-top group-hover:scale-[1.03]"
     }
   },
   {
